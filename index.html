@@ -15,35 +15,24 @@
   <style>
     :root {
       color-scheme: light;
-
-      /* Page and surfaces - Charter style */
-      --background: #f7f4ec;               /* warm cream paper */
-      --surface-container-low: #fffdf8;    /* bright leaf: cards, panels */
-      --surface-container: #ece5d4;        /* deeper cream: secondary buttons, accents */
-      --surface-container-high: #e3dac4;   /* table header band, hover fills */
+      --background: #f7f4ec;               
+      --surface-container-low: #fffdf8;    
+      --surface-container: #ece5d4;        
+      --surface-container-high: #e3dac4;   
       --surface-elevated: #ffffff;
-
-      /* Ink */
-      --on-surface: #1c1f26;               /* near-black ink */
-      --on-surface-variant: #4f5360;       /* graphite: secondary text */
+      --on-surface: #1c1f26;               
+      --on-surface-variant: #4f5360;       
       --on-surface-muted: #737887;
-
-      /* Rules & Borders */
-      --outline: #b08d57;                  /* burnished brass */
-      --outline-variant: #d9cfb8;          /* pale brass hairline */
-
-      /* Accents */
-      --primary: #14213d;                  /* deep navy: title band, primary */
-      --on-primary: #f7f4ec;               /* cream on navy */
-      --primary-container: #e3e6ee;        /* pale navy wash */
+      --outline: #b08d57;                  
+      --outline-variant: #d9cfb8;          
+      --primary: #14213d;                  
+      --on-primary: #f7f4ec;               
+      --primary-container: #e3e6ee;        
       --on-primary-container: #14213d;
-
-      --secondary: #2d5a4a;                /* bottle green: favorable notes */
+      --secondary: #2d5a4a;                
       --on-secondary: #ffffff;
       --secondary-container: #e0ece6;
       --on-secondary-container: #1b382e;
-
-      /* Semantic */
       --positive: #2d5a4a;
       --positive-bg: #eaf3ee;
       --warning: #995c00;
@@ -52,8 +41,6 @@
       --error-container: #f8d7da;
       --on-error: #ffffff;
       --on-error-container: #58151c;
-
-      /* Spacing scale */
       --space-xxs: 0.25rem;
       --space-xs: 0.5rem;
       --space-sm: 0.75rem;
@@ -62,13 +49,9 @@
       --space-xl: 2rem;
       --space-2xl: 3rem;
       --space-3xl: 4.5rem;
-
-      /* Typography */
       --font-headline: 'EB Garamond', Georgia, 'Times New Roman', serif;
       --font-body: 'Inter', system-ui, -apple-system, sans-serif;
       --font-label: 'JetBrains Mono', monospace;
-
-      /* Layout & effects */
       --radius-sm: 3px;
       --radius-md: 6px;
       --radius-lg: 10px;
@@ -78,10 +61,7 @@
       --transition-base: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Base Reset */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
     html, body {
       overflow-x: clip;
       margin: 0;
@@ -93,17 +73,9 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    header {
-      position: static !important;
-    }
+    header { position: static !important; }
+    button, input, select, textarea { font-family: inherit; letter-spacing: 0; text-transform: none; }
 
-    button, input, select, textarea {
-      font-family: inherit;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    /* Page container */
     .page-grid {
       display: grid;
       gap: var(--space-xl);
@@ -112,11 +84,8 @@
       margin: 0 auto;
       overflow: hidden;
     }
-    .page-grid * {
-      min-width: 0;
-    }
+    .page-grid * { min-width: 0; }
 
-    /* Masthead / Hero Title Band (Charter Signature: Deep Navy + Brass border) */
     .charter-hero {
       background-color: var(--primary);
       color: var(--on-primary);
@@ -125,10 +94,7 @@
       box-shadow: var(--shadow-card);
       margin: 0 0 var(--space-xl) 0;
     }
-    .hero-container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
+    .hero-container { max-width: 1240px; margin: 0 auto; }
     .hero-eyebrow {
       display: flex;
       align-items: center;
@@ -163,7 +129,6 @@
       max-width: 80ch;
       margin: 0 0 var(--space-lg) 0;
     }
-
     .hero-stats-strip {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -185,13 +150,8 @@
       line-height: 1;
       margin-bottom: var(--space-xxs);
     }
-    .hero-stat-desc {
-      font-size: 0.825rem;
-      color: var(--surface-container-high);
-      line-height: 1.35;
-    }
+    .hero-stat-desc { font-size: 0.825rem; color: var(--surface-container-high); line-height: 1.35; }
 
-    /* Section Structure & Headings */
     .content-section {
       background-color: var(--surface-container-low);
       border: 1px solid var(--outline-variant);
@@ -199,35 +159,11 @@
       padding: var(--space-xl);
       box-shadow: var(--shadow-subtle);
     }
-    .section-header {
-      margin-bottom: var(--space-lg);
-      padding-bottom: var(--space-sm);
-      border-bottom: 2px solid var(--outline-variant);
-    }
-    .section-tag {
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--outline);
-      display: inline-block;
-      margin-bottom: var(--space-xxs);
-    }
-    .section-title {
-      font-family: var(--font-headline);
-      font-size: 1.85rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 var(--space-xs) 0;
-      line-height: 1.25;
-    }
-    .section-lede {
-      font-size: 1rem;
-      color: var(--on-surface-variant);
-      margin: 0;
-      max-width: 75ch;
-    }
+    .section-header { margin-bottom: var(--space-lg); padding-bottom: var(--space-sm); border-bottom: 2px solid var(--outline-variant); }
+    .section-tag { font-family: var(--font-label); font-size: 0.8rem; font-weight: 600; color: var(--outline); display: inline-block; margin-bottom: var(--space-xxs); }
+    .section-title { font-family: var(--font-headline); font-size: 1.85rem; font-weight: 700; color: var(--primary); margin: 0 0 var(--space-xs) 0; line-height: 1.25; }
+    .section-lede { font-size: 1rem; color: var(--on-surface-variant); margin: 0; max-width: 75ch; }
 
-    /* Callout & Quote boxes (Charter brass rules) */
     .charter-quote {
       position: relative;
       background: var(--surface-container);
@@ -236,64 +172,16 @@
       margin: var(--space-lg) 0;
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     }
-    .quote-text {
-      font-family: var(--font-headline);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--primary);
-      margin: 0 0 var(--space-xs) 0;
-      line-height: 1.45;
-    }
-    .quote-author {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--on-surface-variant);
-    }
+    .quote-text { font-family: var(--font-headline); font-size: 1.15rem; font-style: italic; color: var(--primary); margin: 0 0 var(--space-xs) 0; line-height: 1.45; }
+    .quote-author { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: var(--on-surface-variant); }
 
-    /* Comparison Grid: Civil Law vs Common Law */
-    .comparative-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-md);
-      margin: var(--space-lg) 0;
-    }
-    .comparative-card {
-      background: var(--surface-elevated);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-md);
-    }
-    .comparative-card.active {
-      border-color: var(--outline);
-      box-shadow: var(--shadow-card);
-    }
-    .comparative-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: var(--space-sm);
-      padding-bottom: var(--space-xs);
-      border-bottom: 1px solid var(--outline-variant);
-    }
-    .comparative-title {
-      font-family: var(--font-headline);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0;
-    }
-    .comparative-pill {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      padding: 2px 8px;
-      border-radius: var(--radius-sm);
-      background-color: var(--primary-container);
-      color: var(--on-primary-container);
-      font-weight: 500;
-    }
+    .comparative-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); margin: var(--space-lg) 0; }
+    .comparative-card { background: var(--surface-elevated); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-md); }
+    .comparative-card.active { border-color: var(--outline); box-shadow: var(--shadow-card); }
+    .comparative-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm); padding-bottom: var(--space-xs); border-bottom: 1px solid var(--outline-variant); }
+    .comparative-title { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 0; }
+    .comparative-pill { font-family: var(--font-label); font-size: 0.75rem; padding: 2px 8px; border-radius: var(--radius-sm); background-color: var(--primary-container); color: var(--on-primary-container); font-weight: 500; }
 
-    /* The 5-Section Roadmap Navigation */
     .roadmap-track {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -311,54 +199,17 @@
       padding: var(--space-sm) var(--space-xs);
       text-align: center;
       cursor: pointer;
-      transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+      transition: background-color var(--transition-base), border-color var(--transition-base);
     }
-    .roadmap-step:hover {
-      background-color: var(--surface-container-high);
-      border-color: var(--outline);
-    }
-    .roadmap-step.active {
-      background-color: var(--primary);
-      border-color: var(--outline);
-      box-shadow: var(--shadow-subtle);
-    }
-    .roadmap-step.active .step-num {
-      color: var(--outline);
-    }
-    .roadmap-step.active .step-name {
-      color: var(--on-primary);
-      font-weight: 600;
-    }
-    .roadmap-step.active .step-count {
-      background-color: rgba(176, 141, 87, 0.3);
-      color: var(--outline-variant);
-    }
-    .step-num {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      color: var(--on-surface-variant);
-      display: block;
-      margin-bottom: 2px;
-    }
-    .step-name {
-      font-family: var(--font-headline);
-      font-size: 0.95rem;
-      color: var(--primary);
-      margin: 0;
-      line-height: 1.2;
-    }
-    .step-count {
-      display: inline-block;
-      margin-top: 4px;
-      font-family: var(--font-label);
-      font-size: 0.7rem;
-      background: var(--surface-container);
-      color: var(--on-surface-variant);
-      padding: 1px 6px;
-      border-radius: var(--radius-sm);
-    }
+    .roadmap-step:hover { background-color: var(--surface-container-high); border-color: var(--outline); }
+    .roadmap-step.active { background-color: var(--primary); border-color: var(--outline); box-shadow: var(--shadow-subtle); }
+    .roadmap-step.active .step-num { color: var(--outline); }
+    .roadmap-step.active .step-name { color: var(--on-primary); font-weight: 600; }
+    .roadmap-step.active .step-count { background-color: rgba(176, 141, 87, 0.3); color: var(--outline-variant); }
+    .step-num { font-family: var(--font-label); font-size: 0.75rem; color: var(--on-surface-variant); display: block; margin-bottom: 2px; }
+    .step-name { font-family: var(--font-headline); font-size: 0.95rem; color: var(--primary); margin: 0; line-height: 1.2; }
+    .step-count { display: inline-block; margin-top: 4px; font-family: var(--font-label); font-size: 0.7rem; background: var(--surface-container); color: var(--on-surface-variant); padding: 1px 6px; border-radius: var(--radius-sm); }
 
-    /* Filter & Controls Toolbar */
     .controls-toolbar {
       display: flex;
       flex-wrap: wrap;
@@ -371,19 +222,8 @@
       padding: var(--space-sm) var(--space-md);
       margin-bottom: var(--space-lg);
     }
-    .filter-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-      align-items: center;
-    }
-    .filter-label {
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--on-surface-variant);
-      margin-right: var(--space-xs);
-    }
+    .filter-group { display: flex; flex-wrap: wrap; gap: var(--space-xs); align-items: center; }
+    .filter-label { font-family: var(--font-label); font-size: 0.8rem; font-weight: 600; color: var(--on-surface-variant); margin-right: var(--space-xs); }
     .filter-btn {
       background-color: var(--surface-container-low);
       color: var(--on-surface);
@@ -393,23 +233,10 @@
       font-size: 0.825rem;
       font-weight: 500;
       cursor: pointer;
-      transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
     }
-    .filter-btn:hover {
-      background-color: var(--surface-container-high);
-      border-color: var(--outline);
-    }
-    .filter-btn.active {
-      background-color: var(--primary);
-      color: var(--on-primary);
-      border-color: var(--primary);
-    }
-    .search-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      min-width: 260px;
-    }
+    .filter-btn:hover { background-color: var(--surface-container-high); border-color: var(--outline); }
+    .filter-btn.active { background-color: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+    .search-wrapper { position: relative; display: flex; align-items: center; min-width: 260px; }
     .search-input {
       width: 100%;
       background-color: var(--surface-container-low);
@@ -419,20 +246,9 @@
       font-size: 0.85rem;
       color: var(--on-surface);
       outline: none;
-      transition: border-color var(--transition-base), box-shadow var(--transition-base);
-    }
-    .search-input:focus-visible {
-      border-color: var(--outline);
-      box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.25);
     }
 
-    /* 14 Elements Interactive Grid */
-    .elements-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--space-md);
-      margin-bottom: var(--space-xl);
-    }
+    .elements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-xl); }
     .element-card {
       background-color: var(--surface-container-low);
       border: 1px solid var(--outline-variant);
@@ -441,82 +257,20 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
       cursor: pointer;
       position: relative;
     }
-    .element-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--outline);
-      box-shadow: var(--shadow-card);
-    }
-    .element-card.selected {
-      border: 2px solid var(--outline);
-      background-color: #fffefb;
-      box-shadow: var(--shadow-card);
-    }
-    .element-card.is-hidden {
-      display: none !important;
-    }
-    .element-card-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: var(--space-xs);
-    }
-    .element-num-badge {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      background-color: var(--primary-container);
-      padding: 2px 7px;
-      border-radius: var(--radius-sm);
-    }
-    .element-card.selected .element-num-badge {
-      background-color: var(--primary);
-      color: var(--outline);
-    }
-    .element-section-tag {
-      font-family: var(--font-label);
-      font-size: 0.7rem;
-      color: var(--on-surface-variant);
-    }
-    .element-card-title {
-      font-family: var(--font-headline);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 var(--space-xs) 0;
-      line-height: 1.25;
-    }
-    .element-card-desc {
-      font-size: 0.875rem;
-      color: var(--on-surface-variant);
-      line-height: 1.5;
-      margin-bottom: var(--space-sm);
-      flex-grow: 1;
-    }
-    .element-card-foot {
-      padding-top: var(--space-xs);
-      border-top: 1px solid var(--outline-variant);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.775rem;
-      color: var(--on-surface-muted);
-    }
-    .element-action-text {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      color: var(--outline);
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .element-card:hover { transform: translateY(-2px); border-color: var(--outline); box-shadow: var(--shadow-card); }
+    .element-card.selected { border: 2px solid var(--outline); background-color: #fffefb; box-shadow: var(--shadow-card); }
+    .element-card.is-hidden { display: none !important; }
+    .element-card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-xs); }
+    .element-num-badge { font-family: var(--font-label); font-size: 0.75rem; font-weight: 700; color: var(--primary); background-color: var(--primary-container); padding: 2px 7px; border-radius: var(--radius-sm); }
+    .element-section-tag { font-family: var(--font-label); font-size: 0.7rem; color: var(--on-surface-variant); }
+    .element-card-title { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 0 0 var(--space-xs) 0; }
+    .element-card-desc { font-size: 0.875rem; color: var(--on-surface-variant); line-height: 1.5; margin-bottom: var(--space-sm); flex-grow: 1; }
+    .element-card-foot { padding-top: var(--space-xs); border-top: 1px solid var(--outline-variant); display: flex; justify-content: space-between; align-items: center; font-size: 0.775rem; color: var(--on-surface-muted); }
+    .element-action-text { font-family: var(--font-label); font-size: 0.75rem; color: var(--outline); font-weight: 600; }
 
-    /* Dynamic Deep Dive Inspector Panel */
     .inspector-panel {
       background-color: var(--surface-container-low);
       border: 2px solid var(--outline);
@@ -525,436 +279,69 @@
       box-shadow: var(--shadow-elevated);
       margin-bottom: var(--space-2xl);
     }
-    .inspector-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: var(--space-md);
-      padding-bottom: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-      margin-bottom: var(--space-lg);
-    }
-    .inspector-title-area {
-      flex: 1;
-    }
-    .inspector-meta {
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      color: var(--outline);
-      font-weight: 600;
-      margin-bottom: var(--space-xxs);
-    }
-    .inspector-title {
-      font-family: var(--font-headline);
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0;
-      line-height: 1.2;
-    }
-    .inspector-close-btn {
-      background: var(--surface-container);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      color: var(--on-surface);
-      padding: var(--space-xs) var(--space-md);
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-    .inspector-close-btn:hover {
-      background-color: var(--surface-container-high);
-      border-color: var(--outline);
-    }
+    .inspector-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid var(--outline-variant); margin-bottom: var(--space-lg); }
+    .inspector-meta { font-family: var(--font-label); font-size: 0.8rem; color: var(--outline); font-weight: 600; margin-bottom: var(--space-xxs); }
+    .inspector-title { font-family: var(--font-headline); font-size: 1.9rem; font-weight: 700; color: var(--primary); margin: 0; }
+    .inspector-close-btn { background: var(--surface-container); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); color: var(--on-surface); padding: var(--space-xs) var(--space-md); font-size: 0.85rem; cursor: pointer; }
+    .inspector-columns { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-xl); }
+    @media (max-width: 860px) { .inspector-columns { grid-template-columns: 1fr; } }
+    .inspector-col-title { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 0 0 var(--space-sm) 0; }
+    .inspector-text { font-size: 0.95rem; line-height: 1.6; color: var(--on-surface); margin-bottom: var(--space-md); }
+    .checklist-list { list-style: none; padding: 0; margin: 0 0 var(--space-md) 0; }
+    .checklist-item { display: flex; align-items: flex-start; gap: var(--space-xs); font-size: 0.9rem; margin-bottom: var(--space-xs); color: var(--on-surface); }
+    .checklist-bullet { color: var(--secondary); font-weight: 700; }
+    .warning-bullet { color: var(--error); font-weight: 700; }
+    .example-box { background-color: var(--surface-container); border-left: 3px solid var(--outline); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: var(--space-md); margin-top: var(--space-sm); }
+    .example-box-label { font-family: var(--font-label); font-size: 0.75rem; font-weight: 600; color: var(--outline); margin-bottom: var(--space-xxs); }
+    .example-box-text { font-family: var(--font-body); font-size: 0.875rem; color: var(--on-surface); font-style: italic; }
 
-    .inspector-columns {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: var(--space-xl);
-    }
-    @media (max-width: 860px) {
-      .inspector-columns {
-        grid-template-columns: 1fr;
-      }
-    }
-    .inspector-col-title {
-      font-family: var(--font-headline);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 var(--space-sm) 0;
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-    .inspector-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--on-surface);
-      margin-bottom: var(--space-md);
-    }
-    .checklist-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 var(--space-md) 0;
-    }
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-xs);
-      font-size: 0.9rem;
-      margin-bottom: var(--space-xs);
-      color: var(--on-surface);
-    }
-    .checklist-bullet {
-      color: var(--secondary);
-      font-weight: 700;
-      line-height: 1.4;
-    }
-    .warning-item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-xs);
-      font-size: 0.9rem;
-      margin-bottom: var(--space-xs);
-      color: var(--on-surface);
-    }
-    .warning-bullet {
-      color: var(--error);
-      font-weight: 700;
-      line-height: 1.4;
-    }
-    .example-box {
-      background-color: var(--surface-container);
-      border-left: 3px solid var(--outline);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: var(--space-md);
-      margin-top: var(--space-sm);
-    }
-    .example-box-label {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--outline);
-      margin-bottom: var(--space-xxs);
-    }
-    .example-box-text {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      color: var(--on-surface);
-      line-height: 1.5;
-      font-style: italic;
-    }
+    .case-study-banner { background: linear-gradient(135deg, rgba(20, 33, 61, 0.05) 0%, rgba(176, 141, 87, 0.08) 100%); border: 1px solid var(--outline); border-radius: var(--radius-sm); padding: var(--space-md) var(--space-lg); margin-bottom: var(--space-lg); }
+    .case-headline { font-family: var(--font-headline); font-size: 1.35rem; font-weight: 700; color: var(--primary); margin: 0 0 var(--space-xxs) 0; }
+    .case-author { font-size: 0.875rem; color: var(--on-surface-variant); font-style: italic; }
 
-    /* Applied Case Study Section */
-    .case-study-banner {
-      background: linear-gradient(135deg, rgba(20, 33, 61, 0.05) 0%, rgba(176, 141, 87, 0.08) 100%);
-      border: 1px solid var(--outline);
-      border-radius: var(--radius-sm);
-      padding: var(--space-md) var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
-    .case-headline {
-      font-family: var(--font-headline);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 var(--space-xxs) 0;
-    }
-    .case-author {
-      font-size: 0.875rem;
-      color: var(--on-surface-variant);
-      font-style: italic;
-    }
+    .case-tabs { display: flex; flex-wrap: wrap; gap: var(--space-xs); border-bottom: 2px solid var(--outline-variant); margin-bottom: var(--space-lg); }
+    .case-tab-btn { background: none; border: none; border-bottom: 3px solid transparent; padding: var(--space-xs) var(--space-md); font-family: var(--font-headline); font-size: 1.05rem; font-weight: 600; color: var(--on-surface-variant); cursor: pointer; margin-bottom: -2px; }
+    .case-tab-btn.active { color: var(--primary); border-bottom-color: var(--outline); }
+    .case-content-card { background-color: var(--surface-elevated); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-lg); }
+    .case-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-md); margin: var(--space-md) 0; }
+    .stat-metric-card { background: var(--surface-container); border-left: 3px solid var(--outline); padding: var(--space-sm) var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .stat-metric-val { font-family: var(--font-headline); font-size: 1.75rem; font-weight: 700; color: var(--primary); line-height: 1.1; }
+    .stat-metric-desc { font-size: 0.825rem; color: var(--on-surface-variant); margin-top: var(--space-xxs); }
 
-    /* Case Navigator Tabs */
-    .case-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-      border-bottom: 2px solid var(--outline-variant);
-      margin-bottom: var(--space-lg);
-    }
-    .case-tab-btn {
-      background: none;
-      border: none;
-      border-bottom: 3px solid transparent;
-      padding: var(--space-xs) var(--space-md);
-      font-family: var(--font-headline);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--on-surface-variant);
-      cursor: pointer;
-      margin-bottom: -2px;
-      transition: color var(--transition-base), border-color var(--transition-base);
-    }
-    .case-tab-btn:hover {
-      color: var(--primary);
-    }
-    .case-tab-btn.active {
-      color: var(--primary);
-      border-bottom-color: var(--outline);
-    }
+    .workshop-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); }
+    @media (max-width: 920px) { .workshop-grid { grid-template-columns: 1fr; } }
+    .workshop-checklist-container { background-color: var(--surface-elevated); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-lg); }
+    .progress-bar-wrap { margin-bottom: var(--space-md); }
+    .progress-labels { display: flex; justify-content: space-between; font-family: var(--font-label); font-size: 0.8rem; margin-bottom: var(--space-xxs); }
+    .progress-track { width: 100%; height: 10px; background-color: var(--surface-container); border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--outline-variant); }
+    .progress-fill { height: 100%; background-color: var(--outline); width: 0%; transition: width 0.3s ease; }
+    .score-badge { display: inline-block; padding: var(--space-xxs) var(--space-xs); border-radius: var(--radius-sm); font-family: var(--font-label); font-size: 0.775rem; font-weight: 600; margin-top: var(--space-xs); }
+    .badge-init { background-color: var(--surface-container-high); color: var(--on-surface-variant); }
+    .badge-mid { background-color: var(--warning-bg); color: var(--warning); border: 1px solid var(--outline-variant); }
+    .badge-adv { background-color: var(--positive-bg); color: var(--positive); border: 1px solid rgba(45, 90, 74, 0.3); }
 
-    .case-content-card {
-      background-color: var(--surface-elevated);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-lg);
-    }
-    .case-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--space-md);
-      margin: var(--space-md) 0;
-    }
-    .stat-metric-card {
-      background: var(--surface-container);
-      border-left: 3px solid var(--outline);
-      padding: var(--space-sm) var(--space-md);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-    .stat-metric-val {
-      font-family: var(--font-headline);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      line-height: 1.1;
-    }
-    .stat-metric-desc {
-      font-size: 0.825rem;
-      color: var(--on-surface-variant);
-      margin-top: var(--space-xxs);
-    }
+    .check-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .check-table tr { border-bottom: 1px solid var(--outline-variant); }
+    .check-table td { padding: var(--space-xs) 0; vertical-align: middle; }
+    .check-table input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; margin-right: var(--space-xs); }
 
-    /* Interactive Auditor & Workshop Section */
-    .workshop-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: var(--space-xl);
-    }
-    @media (max-width: 920px) {
-      .workshop-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .workshop-checklist-container {
-      background-color: var(--surface-elevated);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-lg);
-    }
-    .progress-bar-wrap {
-      margin-bottom: var(--space-md);
-    }
-    .progress-labels {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      margin-bottom: var(--space-xxs);
-    }
-    .progress-track {
-      width: 100%;
-      height: 10px;
-      background-color: var(--surface-container);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 1px solid var(--outline-variant);
-    }
-    .progress-fill {
-      height: 100%;
-      background-color: var(--outline);
-      width: 0%;
-      transition: width 0.3s ease;
-    }
-    .score-badge {
-      display: inline-block;
-      padding: var(--space-xxs) var(--space-xs);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-label);
-      font-size: 0.775rem;
-      font-weight: 600;
-      margin-top: var(--space-xs);
-    }
-    .badge-init {
-      background-color: var(--surface-container-high);
-      color: var(--on-surface-variant);
-    }
-    .badge-mid {
-      background-color: var(--warning-bg);
-      color: var(--warning);
-      border: 1px solid var(--outline-variant);
-    }
-    .badge-adv {
-      background-color: var(--positive-bg);
-      color: var(--positive);
-      border: 1px solid rgba(45, 90, 74, 0.3);
-    }
+    .generator-container { background-color: var(--surface-elevated); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md); }
+    .form-group { display: flex; flex-direction: column; gap: var(--space-xxs); }
+    .form-label { font-family: var(--font-label); font-size: 0.8rem; font-weight: 600; color: var(--primary); }
+    .form-input, .form-textarea, .form-select { background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-xs) var(--space-sm); font-size: 0.875rem; color: var(--on-surface); outline: none; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; margin-top: var(--space-xs); }
+    .btn-primary { background-color: var(--primary); color: var(--on-primary); border: 1px solid var(--primary); border-radius: var(--radius-sm); padding: var(--space-xs) var(--space-md); font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+    .btn-secondary { background-color: var(--surface-container); color: var(--primary); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-xs) var(--space-md); font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+    .output-preview-box { background-color: var(--surface-container); border: 1px solid var(--outline-variant); border-radius: var(--radius-sm); padding: var(--space-md); font-family: var(--font-body); font-size: 0.85rem; white-space: pre-wrap; max-height: 280px; overflow-y: auto; color: var(--on-surface); }
 
-    .check-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-    .check-table tr {
-      border-bottom: 1px solid var(--outline-variant);
-    }
-    .check-table td {
-      padding: var(--space-xs) 0;
-      vertical-align: middle;
-    }
-    .check-table input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-      cursor: pointer;
-      margin-right: var(--space-xs);
-    }
-
-    /* Template Generator Form */
-    .generator-container {
-      background-color: var(--surface-elevated);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xxs);
-    }
-    .form-label {
-      font-family: var(--font-label);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .form-input, .form-textarea, .form-select {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-xs) var(--space-sm);
-      font-size: 0.875rem;
-      color: var(--on-surface);
-      outline: none;
-      transition: border-color var(--transition-base);
-    }
-    .form-input:focus-visible, .form-textarea:focus-visible, .form-select:focus-visible {
-      border-color: var(--outline);
-      box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.2);
-    }
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-      align-items: center;
-      margin-top: var(--space-xs);
-    }
-    .btn-primary {
-      background-color: var(--primary);
-      color: var(--on-primary);
-      border: 1px solid var(--primary);
-      border-radius: var(--radius-sm);
-      padding: var(--space-xs) var(--space-md);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color var(--transition-base);
-    }
-    .btn-primary:hover {
-      background-color: #1f325c;
-    }
-    .btn-secondary {
-      background-color: var(--surface-container);
-      color: var(--primary);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-xs) var(--space-md);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color var(--transition-base), border-color var(--transition-base);
-    }
-    .btn-secondary:hover {
-      background-color: var(--surface-container-high);
-      border-color: var(--outline);
-    }
-
-    .output-preview-box {
-      background-color: var(--surface-container);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-sm);
-      padding: var(--space-md);
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      white-space: pre-wrap;
-      max-height: 280px;
-      overflow-y: auto;
-      color: var(--on-surface);
-      line-height: 1.5;
-    }
-
-    /* Reference & Bibliography section */
-    .biblio-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--space-md);
-      margin-top: var(--space-md);
-    }
-    .biblio-card {
-      background: var(--surface-elevated);
-      border-left: 3px solid var(--outline);
-      padding: var(--space-sm) var(--space-md);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-    .biblio-title {
-      font-family: var(--font-headline);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 2px 0;
-    }
-    .biblio-meta {
-      font-size: 0.8rem;
-      color: var(--on-surface-variant);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 640px) {
-      .page-grid {
-        padding: var(--space-sm);
-      }
-      .roadmap-track {
-        grid-template-columns: 1fr;
-      }
-      .content-section {
-        padding: var(--space-md);
-      }
-      .inspector-panel {
-        padding: var(--space-md);
-      }
-      .charter-hero {
-        padding: var(--space-lg) var(--space-md);
-      }
-    }
-
-    /* Accessibility: Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+    .biblio-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); }
+    .biblio-card { background: var(--surface-elevated); border-left: 3px solid var(--outline); padding: var(--space-sm) var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .biblio-title { font-family: var(--font-headline); font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 2px 0; }
+    .biblio-meta { font-size: 0.8rem; color: var(--on-surface-variant); }
   </style>
 </head>
 <body>
 
-  <!-- Full-bleed Charter Hero Band -->
   <header class="charter-hero">
     <div class="hero-container">
       <div class="hero-eyebrow">
@@ -989,989 +376,23 @@
   </header>
 
   <main class="page-grid">
-
-    <!-- I. Foundational Concepts & Theory Section -->
     <section class="content-section" id="foundations">
       <div class="section-header">
         <span class="section-tag">I БҮЛЭГ · ҮНДЭСЛЭЛ БА ҮЗЭЛ БАРИМТЛАЛ</span>
         <h2 class="section-title">Шүүхийн шийдвэрийн дүн шинжилгээний мөн чанар ба зорилго</h2>
         <p class="section-lede">
-          Шүүхийн шийдвэрийг зөв уншиж ойлгох, хууль тайлбарлал ба хэрэглээний онолын холбоо хамаарлыг тодорхойлох, шүүхийн шийдлийн үндэслэлд мэргэжлийн үнэлэлт өгөх тухай.
+          Шүүхийн шийдвэрийг зөв уншиж ойлгох, хууль тайлбарлал ба хэрэглээний онолын холбоо хамаарлыг тодорхойлох тухай.
         </p>
-      </div>
-
-      <div class="charter-quote">
-        <p class="quote-text">
-          "Шүүгчийн шийдвэрт дүн шинжилгээ хийгээд эхлэхээр шүүгчид шийдвэрээ гаргахдаа маш хариуцлагатай хандахаас өөр аргагүй болно. Энэ бол мэргэжилтний бултаж, үгүйсгэж үл болох хяналт. Хяналтаас хариуцлага эхэлнэ. Энэ утгаараа шүүгчийг хариуцлагатай болгох чухал механизм ажиллаж эхэллээ."
-        </p>
-        <div class="quote-author">
-          — Профессор Н.Лүндэндорж (Шүүхийн ерөнхий зөвлөлийн дарга)
-        </div>
-      </div>
-
-      <p>
-        <strong>Шүүхийн шийдвэрийн дүн шинжилгээ гэдэг нь</strong> тодорхой нэг шүүхийн шийдвэрийг эрх зүйн болон хэлбэрийн талаас нь задлан шинжилж, тухайн шийдвэрийн эрх зүйн асуудал, үндэслэл, ач холбогдлыг судалгааны үндсэн дээр тайлбарлан бичсэн бичвэрийг хэлнэ. Монгол Улсад Шүүхийн судалгаа, мэдээлэл, сургалтын хүрээлэнгээс энэхүү аргачлалыг боловсруулахдаа олон улсын жишиг, тэр дундаа эх газрын эрх зүйн тогтолцоотой улс орнуудын онол, арга зүйд тулгуурласан байна.
-      </p>
-
-      <!-- Comparative Framework: Civil Law vs Common Law -->
-      <div class="comparative-grid">
-        <div class="comparative-card active">
-          <div class="comparative-head">
-            <h3 class="comparative-title">Эх газрын эрх зүй (Civil Law: Япон, Монгол)</h3>
-            <span class="comparative-pill">Бидний баримталсан загвар</span>
-          </div>
-          <p class="comparative-desc">
-            Хийсвэр бичмэл хуулийн хэм хэмжээг бодит амьдралын үйл баримтад хэрхэн тайлбарлан хэрэглэж буй хууль зүйн логик, онол, үзэл баримтлалын уялдаа болон формаль шаардлагад гүнзгий анхаардаг. Зөвхөн хэргийн фактыг бус, нийгмийн үр нөлөө, шүүмжлэлт үнэлгээг цогцоор нь тусгадаг.
-          </p>
-          <ul class="checklist-list">
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Үйл баримтаас эрх зүйн ач холбогдолтой фактыг ялгах</li>
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Шүүхийн шийдвэрийн формаль бүтэц (107-р зүйл)-ийг үнэлэх</li>
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Эрх зүйн онол, номлолтой холбон шүүмж өгөх</li>
-          </ul>
-        </div>
-
-        <div class="comparative-card">
-          <div class="comparative-head">
-            <h3 class="comparative-title">Англи-Америкийн эрх зүй (Common Law: АНУ)</h3>
-            <span class="comparative-pill">Кейс хөтлөлтийн загвар</span>
-          </div>
-          <p class="comparative-desc">
-            АНУ-ын шүүхийн шийдвэрийн дүн шинжилгээ (Case Briefing) нь шүүхийн шийдвэрийн үндсэн мэдээлэл, оролцогч талуудын нотлох баримт, шийдэлд илүү төвлөрдөг. Формаль шаардлага болон онолын гүнзгий судалгааг харьцангуй бага хөнддөг учир эх газрын тогтолцоонд дангаараа хангалтгүй байдаг.
-          </p>
-          <ul class="checklist-list">
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Issue, Rule, Application, Conclusion (IRAC) загвар</li>
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Прецедентэд шууд уягдсан шүүн таслах практик</li>
-            <li class="checklist-item"><span class="checklist-bullet">✓</span> Формаль бүтэц ба хэл найруулгыг тусгайлан үнэлдэггүй</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="background-color: var(--surface-container); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 3px solid var(--secondary);">
-        <strong>Судалгаа хийхэд тохиромжтой шийдвэр:</strong> Шинжилгээ хийхдээ Улсын дээд шүүхийн тогтоол, эсхүл хяналтын шатаар ороогүй давж заалдах шатны магадлалыг сонгох нь хамгийн өндөр үр өгөөжтэй байдаг. Ялангуяа хууль тайлбарлалын шинэ чиг хандлагыг тодорхойлсон, практикт зөрүүтэй хэрэглэгдэж буй, нийгмийн анхаарлын төвд байгаа хэргүүд онцгой ач холбогдолтой юм.
       </div>
     </section>
-
-    <!-- II. The 5 Sections & 14 Elements Roadmap & Filterable Directory -->
-    <section class="content-section" id="roadmap">
-      <div class="section-header">
-        <span class="section-tag">II БҮЛЭГ · ИНТЕРАКТИВ БҮТЭЦ</span>
-        <h2 class="section-title">5 Үндсэн хэсэг ба 14 элементийн тогтолцоо</h2>
-        <p class="section-lede">
-          Аргачлалын 5 макро хэсэг болон тэдгээрт хамаарах 14 шинжилгээний элементийг сонгон нарийвчилсан шалгуур, арга зүйн зөвлөмжийг нээж үзнэ үү.
-        </p>
-      </div>
-
-      <!-- 5-Section Progress Tracker / Selector -->
-      <nav class="roadmap-track" aria-label="Шинжилгээний 5 үндсэн бүтэц">
-        <button class="roadmap-step active" onclick="filterBySection('all', this)">
-          <span class="step-num">БҮГД</span>
-          <p class="step-name">Бүх 14 элемент</p>
-          <span class="step-count">14 шинжилгээ</span>
-        </button>
-        <button class="roadmap-step" onclick="filterBySection('sec1', this)">
-          <span class="step-num">1-Р ХЭСЭГ</span>
-          <p class="step-name">Танилцуулах</p>
-          <span class="step-count">3 элемент</span>
-        </button>
-        <button class="roadmap-step" onclick="filterBySection('sec2', this)">
-          <span class="step-num">2-Р ХЭСЭГ</span>
-          <p class="step-name">Үйл явдал</p>
-          <span class="step-count">1 элемент</span>
-        </button>
-        <button class="roadmap-step" onclick="filterBySection('sec3', this)">
-          <span class="step-num">3-Р ХЭСЭГ</span>
-          <p class="step-name">Шийдвэрлэсэн байдал</p>
-          <span class="step-count">2 элемент</span>
-        </button>
-        <button class="roadmap-step" onclick="filterBySection('sec4', this)">
-          <span class="step-num">4-Р ХЭСЭГ</span>
-          <p class="step-name">Дүн шинжилгээ</p>
-          <span class="step-count">7 элемент</span>
-        </button>
-      </nav>
-
-      <!-- Controls Toolbar: Category Filters + Search -->
-      <div class="controls-toolbar">
-        <div class="filter-group">
-          <span class="filter-label">Шинж чанараар:</span>
-          <button class="filter-btn active" onclick="filterByNature('all', this)">Бүгд</button>
-          <button class="filter-btn" onclick="filterByNature('formal', this)">Формаль / Техникийн</button>
-          <button class="filter-btn" onclick="filterByNature('procedural', this)">Процессын / Баримтын</button>
-          <button class="filter-btn" onclick="filterByNature('substantive', this)">Материаллаг / Онолын</button>
-          <button class="filter-btn" onclick="filterByNature('critical', this)">Шүүмжлэлт үнэлгээ</button>
-        </div>
-        <div class="search-wrapper">
-          <input type="text" id="elementSearch" class="search-input" placeholder="Элементээс хайх (жишээ: асуудал, баримт...)" oninput="handleElementSearch(this.value)">
-        </div>
-      </div>
-
-      <!-- 14 Interactive Element Cards -->
-      <div class="elements-grid" id="elementsGrid">
-
-        <!-- 1. Шийдвэрийн нэр -->
-        <article class="element-card" data-section="sec1" data-nature="formal" onclick="openInspector(1)" id="el-card-1">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 01</span>
-              <span class="element-section-tag">1. Танилцуулах хэсэг</span>
-            </div>
-            <h3 class="element-card-title">Шүүхийн шийдвэрийн нэр</h3>
-            <p class="element-card-desc">
-              Хэргийн талуудын нэрээр бус, эрх зүйн маргааны гол агуулга, сэдвээр оновчтой нэрлэх дүрэм.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Агуулгаар нэрлэх</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 2. Шийдвэрлэсэн шүүх, огноо -->
-        <article class="element-card" data-section="sec1" data-nature="formal" onclick="openInspector(2)" id="el-card-2">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 02</span>
-              <span class="element-section-tag">1. Танилцуулах хэсэг</span>
-            </div>
-            <h3 class="element-card-title">Шийдвэрлэсэн шүүх, шийдвэрийн огноо</h3>
-            <p class="element-card-desc">
-              Дүн шинжилгээ хийж буй шийдвэр болон өмнөх шатны шүүхүүдийн шийдвэрийг сүүлчийнхээс эхлэн ухрах дарааллаар тоочих.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Урвуу дараалал</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 3. Эх сурвалж -->
-        <article class="element-card" data-section="sec1" data-nature="formal" onclick="openInspector(3)" id="el-card-3">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 03</span>
-              <span class="element-section-tag">1. Танилцуулах хэсэг</span>
-            </div>
-            <h3 class="element-card-title">Шийдвэрийн эх сурвалж</h3>
-            <p class="element-card-desc">
-              Шүүхийн шийдвэрийг бүрэн эхээр нь хаанаас олж болох тухай албан ёсны цахим сан, эмхэтгэлийг заах.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>shuukh.mn · Эмхэтгэл</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 4. Гол үйл баримт -->
-        <article class="element-card" data-section="sec2" data-nature="procedural" onclick="openInspector(4)" id="el-card-4">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 04</span>
-              <span class="element-section-tag">2. Үйл явдлын агуулга</span>
-            </div>
-            <h3 class="element-card-title">Гол үйл баримт (Material Facts)</h3>
-            <p class="element-card-desc">
-              Хэрэв тухайн үйл баримт өөрчлөгдвөл шийдвэрийн үндэслэл өөрчлөгдөх байсан тийм эрх зүйн шийдвэрлэх фактууд.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Statsky-ийн шалгуур</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 5. Процессын түүх -->
-        <article class="element-card" data-section="sec3" data-nature="procedural" onclick="openInspector(5)" id="el-card-5">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 05</span>
-              <span class="element-section-tag">3. Шийдвэрлэсэн байдал</span>
-            </div>
-            <h3 class="element-card-title">Процессын түүх (Procedural History)</h3>
-            <p class="element-card-desc">
-              Маргаан анхан шатнаас давж заалдах болон хяналтын шат хүртэл хэрхэн дамжиж, ямар гомдлоор хэлэлцэгдсэн явц.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Шат шатны шийдвэр</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 6. Одоогийн шийдвэрийн шийдэл ба үндэслэл -->
-        <article class="element-card" data-section="sec3" data-nature="procedural" onclick="openInspector(6)" id="el-card-6">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 06</span>
-              <span class="element-section-tag">3. Шийдвэрлэсэн байдал</span>
-            </div>
-            <h3 class="element-card-title">Шийдлийн үр дүн ба үндэслэл</h3>
-            <p class="element-card-desc">
-              Шинжилж буй шийдвэрийн тогтоох хэсгийн гол шийдэл (хэвээр үлдээсэн, хүчингүй болгосон) ба шүүхийн баримталсан хууль зүйн тайлбар.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Тогтоох & Үндэслэх хэсэг</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 7. Формаль шаардлага -->
-        <article class="element-card" data-section="sec4" data-nature="formal" onclick="openInspector(7)" id="el-card-7">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 07</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Формаль шаардлага (Хэлбэрийн үнэлгээ)</h3>
-            <p class="element-card-desc">
-              Монгол Улсын онцлог элемент! Хуульд заасан 4 хэсэг бүтэц, үг үсэг, найруулга, логик уялдаанд өгөх үнэлгээ.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>ЗХШХШтХ 107-р зүйл</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 8. Асуудал -->
-        <article class="element-card" data-section="sec4" data-nature="substantive" onclick="openInspector(8)" id="el-card-8">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 08</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Эрх зүйн асуудал (Legal Issue)</h3>
-            <p class="element-card-desc">
-              Шүүхээс шийдвэрлэсэн гол маргааныг бүрэн хэмжээний асуулт болгон томьёолох ба шүүхийн өгсөн "Тийм/Үгүй" хариулт.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Бүрэн асуултын загвар</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 9. Өмнө нь гарч байсан шийдвэр -->
-        <article class="element-card" data-section="sec4" data-nature="procedural" onclick="openInspector(9)" id="el-card-9">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 09</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Өмнөх шүүхийн шийдвэрүүд (Прецедент)</h3>
-            <p class="element-card-desc">
-              Төсөөтэй маргааныг шүүхүүд өмнө нь хэрхэн шийдвэрлэж байсныг ижил болон эсрэг байр сууриар ангилан судлах.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Шүүхийн жишиг харьцуулалт</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 10. Эрх зүйн онол, үзэл баримтлал -->
-        <article class="element-card" data-section="sec4" data-nature="substantive" onclick="openInspector(10)" id="el-card-10">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 10</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Эрх зүйн онол, үзэл баримтлал</h3>
-            <p class="element-card-desc">
-              Тухайн маргаантай холбоотой эрх зүйн онол, хууль тайлбарлах арга зүй, эрдэмтдийн номлол ба хууль тогтоогчийн анхны зорилго.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Онол ба Номлол</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 11. Шийдвэрт өгөх үнэлгээ -->
-        <article class="element-card" data-section="sec4" data-nature="critical" onclick="openInspector(11)" id="el-card-11">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 11</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Шийдвэрт өгөх үнэлгээ (Шүүмж)</h3>
-            <p class="element-card-desc">
-              Шүүхийн хууль тайлбарлал, хууль хэрэглээ зөв үндэслэлтэй болсон эсэхэд судлаачийн байр сууринаас өгөх шүүмжлэлт дүгнэлт.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Хууль зүйн шүүмж</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 12. Шийдвэрийн ач холбогдол -->
-        <article class="element-card" data-section="sec4" data-nature="critical" onclick="openInspector(12)" id="el-card-12">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 12</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Шүүхийн шийдвэрийн ач холбогдол</h3>
-            <p class="element-card-desc">
-              Хууль хэрэглээний нэгдмэл жишиг тогтоох, үндэсний эрх зүйн хөгжилд оруулсан хувь нэмэр, практик үр нөлөө.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Практикийн үр нөлөө</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 13. Цаашид тулгамдсан асуудал -->
-        <article class="element-card" data-section="sec4" data-nature="critical" onclick="openInspector(13)" id="el-card-13">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 13</span>
-              <span class="element-section-tag">4. Дүн шинжилгээ</span>
-            </div>
-            <h3 class="element-card-title">Цаашид тулгамдсан асуудал</h3>
-            <p class="element-card-desc">
-              Шийдвэр гарснаар бүрэн шийдэгдээгүй үлдсэн хуулийн хийдэл, давхардал, зөрчил, хууль тогтоомжид оруулах санал.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Хуулийн хийдэл ба Санал</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-        <!-- 14. Ашигласан материал -->
-        <article class="element-card" data-section="sec5" data-nature="formal" onclick="openInspector(14)" id="el-card-14">
-          <div>
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 14</span>
-              <span class="element-section-tag">5. Эх сурвалж</span>
-            </div>
-            <h3 class="element-card-title">Ашигласан материал, ном зүй</h3>
-            <p class="element-card-desc">
-              Судалгаанд ашигласан ном, сурах бичиг, өгүүлэл, хууль тогтоомж, бусад судлаачдын дүн шинжилгээний бүрэн жагсаалт.
-            </p>
-          </div>
-          <div class="element-card-foot">
-            <span>Ном зүй ба Ишлэл</span>
-            <span class="element-action-text">Дэлгэрэнгүй харах →</span>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Dynamic Deep Dive Inspector Window -->
-      <div id="inspectorPanel" class="inspector-panel" style="display: none;">
-        <div class="inspector-header">
-          <div class="inspector-title-area">
-            <div id="inspMeta" class="inspector-meta">ХЭСЭГ 1 · ЭЛЕМЕНТ 01</div>
-            <h3 id="inspTitle" class="inspector-title">Элементийн нэр</h3>
-          </div>
-          <button class="inspector-close-btn" onclick="closeInspector()">Хаах ✕</button>
-        </div>
-
-        <div class="inspector-columns">
-          <div>
-            <h4 class="inspector-col-title">Арга зүйн шаардлага ба Агуулга</h4>
-            <p id="inspDefinition" class="inspector-text"></p>
-
-            <h4 class="inspector-col-title">Шалгах шалгуурууд (Checklist)</h4>
-            <ul id="inspChecklist" class="checklist-list"></ul>
-
-            <h4 class="inspector-col-title" style="color: var(--error);">Анхаарах түгээмэл алдаа</h4>
-            <ul id="inspWarnings" class="checklist-list"></ul>
-          </div>
-
-          <div>
-            <h4 class="inspector-col-title">Хууль зүйн үндэслэл & Бодит жишээ</h4>
-            <div id="inspStatuteBox" style="background: var(--surface-container); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-md);">
-              <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--primary); font-weight: 600;">БАРИМТЛАХ ХУУЛИЙН ЗОХИЦУУЛАЛТ:</span>
-              <p id="inspStatute" style="font-size: 0.875rem; margin: var(--space-xxs) 0 0 0; color: var(--on-surface);"></p>
-            </div>
-
-            <div class="example-box">
-              <div class="example-box-label">БОДИТ ЖИШЭЭ ТОМЬЁОЛОЛ:</div>
-              <div id="inspExample" class="example-box-text"></div>
-            </div>
-
-            <div style="margin-top: var(--space-md); padding: var(--space-sm); background-color: var(--surface-elevated); border: 1px dashed var(--outline); border-radius: var(--radius-sm);">
-              <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--outline); font-weight: 600;">СУДЛААЧИЙН ЗӨВЛӨМЖ:</span>
-              <p id="inspTip" style="font-size: 0.825rem; margin: var(--space-xxs) 0 0 0; color: var(--on-surface-variant);"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- III. Applied Real-World Case Study Lab (Zorigtyn Margad: Land Dispute & 54.1.3) -->
-    <section class="content-section" id="casestudy">
-      <div class="section-header">
-        <span class="section-tag">III БҮЛЭГ · БОДИТ ШҮҮХИЙН КЕЙС ШИНЖИЛГЭЭ</span>
-        <h2 class="section-title">Практик туршилт: Газрын эрх зүйн маргаан ба ЗХШХШтХ-ийн 54.1.3</h2>
-        <p class="section-lede">
-          Шүүхийн шийдвэрийн 14 элементийн аргачлалыг Захиргааны хэргийн давж заалдах шатны шүүхийн бодит маргаан, эрдэм шинжилгээний бүтээлд хэрхэн хэрэгжүүлснийг интерактив байдлаар судална.
-        </p>
-      </div>
-
-      <div class="case-study-banner">
-        <div class="case-headline">
-          "Захиргааны хэрэг шүүхэд хянан шийдвэрлэх тухай хуулийн 54 дүгээр зүйлийн 54.1.3 дахь заалтын хэрэгжилт: Газрын эрх зүйн маргааны жишээ дээр"
-        </div>
-        <div class="case-author">
-          Зоригтын МАРГАД — Захиргааны хэргийн давж заалдах шатны шүүхийн шүүгчийн туслах, Хуульч, МУИС-ийн ХЗС-ийн магистрант (Монголын шүүх, эрх зүй судлал)
-        </div>
-      </div>
-
-      <!-- Case Tabs Navigation -->
-      <div class="case-tabs" role="tablist">
-        <button class="case-tab-btn active" role="tab" aria-selected="true" onclick="switchCaseTab('context', this)">1. Хэргийн суурь нөхцөл & Хууль</button>
-        <button class="case-tab-btn" role="tab" aria-selected="false" onclick="switchCaseTab('facts', this)">2. Гол үйл баримт (№04)</button>
-        <button class="case-tab-btn" role="tab" aria-selected="false" onclick="switchCaseTab('procedural', this)">3. Процессын түүх (№05, 06)</button>
-        <button class="case-tab-btn" role="tab" aria-selected="false" onclick="switchCaseTab('issue', this)">4. Эрх зүйн асуудал (№08)</button>
-        <button class="case-tab-btn" role="tab" aria-selected="false" onclick="switchCaseTab('divergence', this)">5. Практикийн зөрүү & Статистик (№09)</button>
-        <button class="case-tab-btn" role="tab" aria-selected="false" onclick="switchCaseTab('evaluation', this)">6. Үнэлгээ & Ач холбогдол (№11, 12, 13)</button>
-      </div>
-
-      <!-- Case Tab Content Area -->
-      <div id="caseTabContent" class="case-content-card">
-        <!-- Tab 1: Context -->
-        <div id="case-tab-context">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">2024 оны Газрын тухай хуулийн нэмэлт өөрчлөлт ба Үүссэн асуудал</h3>
-          <p>
-            2023 оны 12 дугаар сарын 07-ны өдөр УИХ-аас Газрын тухай хуульд нэмэлт, өөрчлөлт оруулж, 2024 оны 03 дугаар сарын 25-ны өдрөөс мөрдөгдөж эхэлсэн. Энэхүү хуулиар газрын эрх зүйн маргааныг урьдчилан шийдвэрлэх чиг үүрэг бүхий <strong>"Нийслэлийн газрын эрхийн маргаан таслах зөвлөл"</strong> гэх шинэ институтийг хуульчилсан (ГтХ 601, 602 дугаар зүйл).
-          </p>
-          <div class="charter-quote">
-            <p class="quote-text" style="font-size: 1rem;">
-              "ЗХШХШтХ-ийн 54 дүгээр зүйлийн 54.1.3: Захиргааны ерөнхий хуулийн 92-94 дүгээр зүйлд заасан гомдол гаргах журмаар урьдчилан шийдвэрлүүлэх шаардлагыг биелүүлээгүй ба энэ журмыг хэрэглэх боломжтой бол нэхэмжлэлийг хүлээн авахаас татгалзана."
-            </p>
-          </div>
-          <p>
-            Гэтэл практикт нийслэлийн нутаг дэвсгэрт гарсан <em>дүүргийн Засаг даргын шийдвэртэй</em> холбоотой маргаан бүрийг Нийслэлийн Газрын эрхийн маргаан таслах зөвлөлд хандах ёстой байсан гэж үзэж нэхэмжлэлийг хүлээн авахаас татгалзах явдал түгээмэл гарч, иргэдийн шүүхэд хандах Үндсэн хуулийн эрх зөрчигдөх эрсдэл бий болсон байна.
-          </p>
-        </div>
-
-        <!-- Tab 2: Facts -->
-        <div id="case-tab-facts" style="display: none;">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">Гол үйл баримтыг тодорхойлсон байдал (Элемент №04)</h3>
-          <p>
-            Судлаач шүүхийн шийдвэрээс хэрэгт хамааралгүй хувийн маргааныг хасч, <strong>шийдвэрийн үндэслэлд шууд нөлөөлөх гол үйл баримтуудыг</strong> дараах байдлаар боловсруулсан:
-          </p>
-          <div style="background-color: var(--surface-container); padding: var(--space-md); border-radius: var(--radius-sm); margin-bottom: var(--space-md);">
-            <ol style="margin: 0; padding-left: var(--space-lg); line-height: 1.8;">
-              <li><strong>Хүсэлт гаргасан баримт:</strong> Иргэн З нь Баянзүрх дүүргийн 27 дугаар хорооны нутаг дэвсгэрт оршин сууж буй газраа эзэмших эрх авахаар захиргааны байгууллагад хандсан.</li>
-              <li><strong>Хууль бус шийдвэр:</strong> Баянзүрх дүүргийн Засаг дарга иргэн З-ийн гаргасан хүсэлтийг шийдвэрлэлгүйгээр, 2023 оны 1142 тоот захирамжаар уг газрыг иргэн П-д эзэмшүүлсэн.</li>
-              <li><strong>Урьдчилан шийдвэрлүүлэх ажиллагаа хийсэн баримт:</strong> Иргэн З нь Нийслэлийн Газар зохион байгуулалтын албанд хандаж, тус албанаас 2024.06.05-ны өдрийн 01-03/3930 дугаар албан бичгээр "хүсэлтийг шийдвэрлэх боломжгүй" гэсэн хариуг албан ёсоор гардан авсан.</li>
-            </ol>
-          </div>
-          <p>
-            <strong>Statsky-ийн дүрмийн хэрэгжилт:</strong> Хэрэв иргэн З урьдчилан шийдвэрлүүлэхээр Нийслэлийн Газрын албанд огт хандаагүй байсан бол шүүх нэхэмжлэлийг татгалзах нь зөв байх байсан. Харин хандсан албан бичиг байгаа нь шүүхийн шийдвэрийг өөрчлөх гол үйл баримт болсон юм.
-          </p>
-        </div>
-
-        <!-- Tab 3: Procedural History -->
-        <div id="case-tab-procedural" style="display: none;">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">Шүүхээр шийдвэрлэгдсэн процессын түүх (Элемент №05 & №06)</h3>
-          <div style="display: grid; gap: var(--space-sm);">
-            <div style="background: var(--surface-container-low); border: 1px solid var(--outline-variant); padding: var(--space-md); border-radius: var(--radius-sm);">
-              <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--outline); font-weight: 700;">1. АНХАН ШАТНЫ ШҮҮХ (НдЗХАШШ)</span>
-              <p style="margin: 4px 0;"><strong>2024.07.16-ны өдрийн 128/ШЗ2024/5843 дугаар захирамж:</strong> Нэхэмжлэлийг хүлээн авахаас татгалзсан. "Нийслэлийн Газрын эрхийн маргаан таслах зөвлөлд гомдлоо гаргаж шийдвэрлүүлээгүй тул ЗХШХШтХ 54.1.3-ын шаардлагыг хангаагүй" гэж дүгнэв.</p>
-            </div>
-            <div style="background: var(--surface-container-low); border: 1px solid var(--outline-variant); padding: var(--space-md); border-radius: var(--radius-sm);">
-              <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--primary); font-weight: 700;">2. ДАВЖ ЗААЛДАХ ШАТНЫ ШҮҮХ (ЗХДЗШШ)</span>
-              <p style="margin: 4px 0;"><strong>2024.08.06-ны өдрийн 221/ШТ2024/0624 дугаар тогтоол:</strong> Анхан шатны захирамжийг хэвээр үлдээсэн. Дүүргийн Засаг даргын шийдвэртэй холбоотой гомдлыг Нийслэлийн маргаан таслах зөвлөлд заавал гаргах ёстой байсан гэж үзсэн.</p>
-            </div>
-            <div style="background: var(--surface-container-low); border: 1px solid var(--outline-variant); padding: var(--space-md); border-radius: var(--radius-sm);">
-              <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--secondary); font-weight: 700;">3. УЛСЫН ДЭЭД ШҮҮХИЙН ХЯНАЛТЫН ШАТ</span>
-              <p style="margin: 4px 0;"><strong>2025.05.06-ны өдрийн 001/ХТ2025/0214 дугаар тогтоол:</strong> Нэхэмжлэгчийн хяналтын гомдлыг хэлэлцүүлэхээс татгалзаж, маргаан эцэслэгдсэн.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab 4: Legal Issue -->
-        <div id="case-tab-issue" style="display: none;">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">Эрх зүйн асуудлыг томьёолсон байдал (Элемент №08)</h3>
-          <p>
-            Шүүхийн шийдвэрийн дүн шинжилгээний 8 дахь элементийн дагуу судлаач уг маргааны зангилааг дараах <strong>2 бүрэн хэмжээний эрх зүйн асуулт</strong> болгон дэвшүүлсэн:
-          </p>
-          <div style="background: var(--surface-container); border-left: 4px solid var(--outline); padding: var(--space-md); margin-bottom: var(--space-md);">
-            <p style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--primary); margin: 0 0 var(--space-xs) 0;">
-              <strong>1-р асуулт:</strong> "Газрын тухай хуулийн 601 дүгээр зүйлийн 601.3 дахь хэсэгт заасан 'Нийслэлийн газрын эрхийн маргаан таслах зөвлөлд гомдол гаргаж болно' гэх зохицуулалт нь захиргааны байгууллагын шийдвэрийг эс зөвшөөрсөн этгээдэд олгосон эрх үү, эсхүл шүүхэд хандахын өмнө заавал биелүүлэх хатуу шаардлага (үүрэг) үү?"
-            </p>
-            <p style="font-size: 0.9rem; color: var(--on-surface-variant); margin: 0;">
-              <em>Шүүхийн өгсөн хариулт:</em> Анхан болон давж заалдах шатны зарим шүүх "Үүрэг" гэж үзэж нэхэмжлэлийг татгалзсан. Судлаачийн үзэл баримтлал: "Болно" гэж хуульчилсан нь иргэнд сонголт олгосон эрхийн зохицуулалт бөгөөд шүүхэд шууд хандах эрхийг хязгаарлах үндэслэл болохгүй.
-            </p>
-          </div>
-
-          <div style="background: var(--surface-container); border-left: 4px solid var(--primary); padding: var(--space-md);">
-            <p style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--primary); margin: 0 0 var(--space-xs) 0;">
-              <strong>2-р асуулт:</strong> "Дүүргийн Засаг даргын газар олгосон шийдвэрийг Газрын тухай хуулийн 601.1.3-д заасан 'Нийслэлийн Засаг даргын шийдвэртэй холбоотой маргаан'-д хамааруулан адилтгаж үзэх хууль зүйн үндэслэл бий юу?"
-            </p>
-            <p style="font-size: 0.9rem; color: var(--on-surface-variant); margin: 0;">
-              <em>Шүүхийн өгсөн хариулт:</em> Захиргааны байгууллагын шатлал, харьяаллыг ялгахгүйгээр адилтган үзэж буй нь хууль хэрэглээний ноцтой алдаа болохыг тогтоосон.
-            </p>
-          </div>
-        </div>
-
-        <!-- Tab 5: Divergence & Stats -->
-        <div id="case-tab-divergence" style="display: none;">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">Шүүхийн зөрүүтэй практик & Эмпирик судалгаа (Элемент №09)</h3>
-          <p>
-            Судлаач З.Маргад нь 2024-2025 онд Захиргааны хэргийн давж заалдах шатны шүүхээс ЗХШХШтХ 54.1.3-аар хянасан <strong>145 шүүгчийн захирамжид</strong> дүн шинжилгээ хийсэн.
-          </p>
-
-          <div class="case-stat-grid">
-            <div class="stat-metric-card">
-              <div class="stat-metric-val">60.0%</div>
-              <div class="stat-metric-desc">2024 онд анхан шатны 75 захирамжаас <strong>45 нь үндэслэлгүй</strong> гэж хүчингүй болсон (26 хэвээр, 4 өөрчлөгдсөн).</div>
-            </div>
-            <div class="stat-metric-card">
-              <div class="stat-metric-val">54.3%</div>
-              <div class="stat-metric-desc">2025 онд 70 захирамжаас <strong>38 нь үндэслэлгүй</strong> гэж хүчингүй болсон (24 хэвээр, 8 өөрчлөгдсөн).</div>
-            </div>
-            <div class="stat-metric-card">
-              <div class="stat-metric-val">23.7%</div>
-              <div class="stat-metric-desc">Захиргааны хэргийн анхан шатны шүүхүүдийн нийт шийдвэрлэж буй хэргийн 4 хэрэг тутмын нэг нь <strong>газрын эрх зүйн маргаан</strong>.</div>
-            </div>
-          </div>
-
-          <div style="background-color: var(--surface-container); padding: var(--space-md); border-radius: var(--radius-sm); margin-top: var(--space-md);">
-            <strong>Практикийн шууд зөрүү (Жишээ 1 ба Жишээ 2-ын харьцуулалт):</strong>
-            <p style="font-size: 0.9rem; margin-top: var(--space-xs);">
-              • <em>Жишээ 1 (Иргэн З):</em> Нийслэлийн Газар зохион байгуулалтын албаны албан бичгийг хавсаргасан байхад "Маргаан таслах зөвлөлд хандаагүй" гээд татгалзсан захирамжийг <strong>хэвээр үлдээсэн</strong>.<br>
-              • <em>Жишээ 2 (Иргэн Г - Тогтоол №859):</em> Яг ижил нөхцөлд Нийслэлийн Засаг даргад хандсан байхад анхан шатны шүүх татгалзсаныг давж заалдах шатны шүүх <strong>хүчингүй болгож</strong>, урьдчилан шийдвэрлүүлэх шаардлагыг хангасан гэж дүгнэсэн!
-            </p>
-          </div>
-        </div>
-
-        <!-- Tab 6: Evaluation & Impact -->
-        <div id="case-tab-evaluation" style="display: none;">
-          <h3 style="font-family: var(--font-headline); font-size: 1.4rem; color: var(--primary); margin-top: 0;">Шүүмжлэлт үнэлгээ, ач холбогдол ба Тулгамдсан асуудал (№11, 12, 13)</h3>
-          
-          <div style="margin-bottom: var(--space-md);">
-            <h4 style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--primary); margin: 0 0 var(--space-xxs) 0;">1. Шийдвэрт өгөх шүүмжлэлт үнэлгээ (№11)</h4>
-            <p style="font-size: 0.95rem; line-height: 1.55; color: var(--on-surface);">
-              Шүүхүүд захиргааны байгууллагын "өөрийн хяналт" (self-correction) болон "процессын хэмнэлт" (procedural economy)-ийн зорилгыг хэт механикаар ойлгож, Газрын тухай хуулийн 601.3 дахь хэсгийн эрх олгосон хэм хэмжээг хатуу үүрэг болгон тайлбарласан нь Үндсэн хуулийн 16 дугаар зүйлийн 14-т заасан иргэний <em>шүүхэд гомдол гаргах эрхийг үндэслэлгүй хязгаарласан</em> алдаатай шийдэл болжээ.
-            </p>
-          </div>
-
-          <div style="margin-bottom: var(--space-md);">
-            <h4 style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--secondary); margin: 0 0 var(--space-xxs) 0;">2. Шүүхийн шийдвэрийн ач холбогдол (№12)</h4>
-            <p style="font-size: 0.95rem; line-height: 1.55; color: var(--on-surface);">
-              Энэхүү судалгаа, дүн шинжилгээ нь Захиргааны ерөнхий хуулийн 92-94 дүгээр зүйлийн ерөнхий зохицуулалт ба салбарын тусгай хуулийн (ГтХ, Татварын хууль, Нийгмийн даатгалын хууль) нарийвчилсан харилцааг зааглан, нэхэмжлэл хүлээн авах шатанд шүүхийн практикийг нэг мөр болгоход жишиг чиглүүлэг болсон.
-            </p>
-          </div>
-
-          <div style="background: var(--surface-container); padding: var(--space-md); border-radius: var(--radius-sm); border-left: 3px solid var(--warning);">
-            <h4 style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--warning); margin: 0 0 var(--space-xxs) 0;">3. Цаашид тулгамдсан асуудал ба Санал (№13)</h4>
-            <p style="font-size: 0.9rem; margin: 0; line-height: 1.5; color: var(--on-surface);">
-              1. Газрын тухай хуулийн 601, 602 дугаар зүйлийг тайлбарласан Улсын дээд шүүхийн албан ёсны зөвлөмж, тайлбар гаргах шаардлагатай.<br>
-              2. Захиргааны байгууллагууд иргэдийн өргөдөл гомдолд "боломжгүй" гэх хэлбэрийн хариу өгдөг практикийг зогсоож, татгалзсан шалтгаан, нөхцөлийг бүрэн үндэслэлтэй бичиж хэвшүүлэх.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IV. Detailed 14 Elements Encyclopedia -->
-    <section class="content-section" id="encyclopedia">
-      <div class="section-header">
-        <span class="section-tag">IV БҮЛЭГ · АРГАЧЛАЛЫН ДЭЛГЭРЭНГҮЙ ЭНЦИКЛОПЕДИ</span>
-        <h2 class="section-title">14 Элемент тус бүрийн эрх зүйн стандарт, бүтэц ба бичиглэл</h2>
-        <p class="section-lede">
-          Шүүхийн шийдвэрт дүн шинжилгээ бичихдээ элемент тус бүрийг ямар шаардлага, хуулийн хүрээнд хэрхэн боловсруулах тухай албан ёсны заавар.
-        </p>
-      </div>
-
-      <!-- Part 1 -->
-      <div style="margin-bottom: var(--space-xl);">
-        <h3 style="font-family: var(--font-headline); font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--outline); padding-bottom: 4px;">
-          1-Р БҮЛЭГ: ТАНИЛЦУУЛАХ ХЭСЭГ (1–3 дугаар элемент)
-        </h3>
-        <p style="font-size: 0.95rem; color: var(--on-surface-variant);">
-          Шүүхийн шийдвэрийн тухай үндсэн өгөгдлийг уншигчид танилцуулах хэсэг. Судлаачийн байр сууриас хэргийн гол сэдэв, эрх зүйн маргааны агуулгыг тодорхойлно.
-        </p>
-
-        <div style="display: grid; gap: var(--space-md);">
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 01</span>
-              <span class="element-section-tag">ШҮҮХИЙН ШИЙДВЭРИЙН НЭР</span>
-            </div>
-            <h4 class="element-card-title">Агуулгаар буюу сэдвээр нэрлэх дүрэм</h4>
-            <p class="element-card-desc">
-              Судлаач болон уншигчдад хэргийн зохигчид хэн байх нь бус, энэ шийдвэр <em>ямар агуулгатай маргааныг хэрхэн шийдвэрлэсэн</em> бэ гэдэг нь хамгийн чухал байдаг. Иймд шийдвэрийг "Б.Батын нэхэмжлэлтэй захиргааны хэрэг" гэж биш, <strong>"Үндэслэлгүйгээр ажлаас халагдсаны улмаас ажилгүй байсан хугацааны олговрыг гаргуулахтай холбоотой хэрэг"</strong> эсхүл <strong>"Зээлийн гэрээний шимтгэл төлөх үүрэг нь Иргэний хуулийн 189 дүгээр зүйлээр хязгаарлагдах ёстой гэж дүгнэсэн хэрэг"</strong> хэмээн эрх зүйн маргааны агуулгаар нэрлэнэ. Харин уламжлалт хэлбэр буюу шүүхийн нэрээр ишлэхдээ "Шүүх, огноо, дугаар" стандартыг баримтална.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 02</span>
-              <span class="element-section-tag">ШИЙДВЭРЛЭСЭН ШҮҮХ & ОГНОО</span>
-            </div>
-            <h4 class="element-card-title">Шүүхийн шатлалыг ухрах дарааллаар байрлуулах</h4>
-            <p class="element-card-desc">
-              Дүн шинжилгээ хийж буй шийдвэрийг гаргасан шүүх болон түүний өмнөх шатны шүүхүүдийн шийдвэрийг хамгийн сүүлд гаргасан шийдвэрээс нь уруудах дарааллаар тоочно (Хяналтын шат → Давж заалдах шат → Анхан шат). Мөн шүүхийн шийдвэрийн хуульчилсан төрлийг зөв нэрлэнэ: Анхан шатны шүүх бол <em>"Шүүхийн шийдвэр"</em> эсхүл <em>"Шүүгчийн захирамж"</em> (ЗХШХШтХ 3.1.4, 3.1.7); Давж заалдах шатны шүүх бол <em>"Магадлал"</em> (ЗХШХШтХ 3.1.6); Хяналтын шатны шүүх бол <em>"Шүүхийн тогтоол"</em> (ЗХШХШтХ 3.1.5) гэнэ.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 03</span>
-              <span class="element-section-tag">ЭХ СУРВАЛЖ</span>
-            </div>
-            <h4 class="element-card-title">Шийдвэрийг бүрэн эхээр нь шалгах боломж</h4>
-            <p class="element-card-desc">
-              Уншигч уг шийдвэрийн үнэн бодит байдлыг биечлэн нягтлах боломжийг хангах албан ёсны эх сурвалжийг тодорхой дурдана. Тухайлбал: Шүүхийн ерөнхий зөвлөлийн Шүүхийн шийдвэрийн цахим сан (shuukh.mn), Улсын дээд шүүхийн сонгомол шийдвэрийн эмхэтгэл, "Шүүх эрх мэдэл" сэтгүүл, Захиргааны хэргийн бүртгэл хяналтын нэгдсэн систем гэх мэт.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Part 2 & 3 -->
-      <div style="margin-bottom: var(--space-xl);">
-        <h3 style="font-family: var(--font-headline); font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--outline); padding-bottom: 4px;">
-          2 & 3-Р БҮЛЭГ: ҮЙЛ ЯВДЛЫН АГУУЛГА БА ШИЙДВЭРЛЭСЭН БАЙДАЛ (4–6 дугаар элемент)
-        </h3>
-
-        <div style="display: grid; gap: var(--space-md);">
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 04</span>
-              <span class="element-section-tag">ГОЛ ҮЙЛ БАРИМТ (MATERIAL FACTS)</span>
-            </div>
-            <h4 class="element-card-title">William P. Statsky-ийн алтан дүрэм ба Нотлогдсон факт</h4>
-            <p class="element-card-desc">
-              Нэхэмжлэгч, хариуцагчийн маргаж буй хувийн сэтгэл хөдлөл, тайлбарыг шууд хуулах нь туйлын зохимжгүй. Харин шийдвэрийн үндэслэх хэсгээс нотлох баримтаар тогтоогдсон үйл баримтуудыг шүүнэ. <strong>Гол үйл баримт гэдэг нь:</strong> тухайн үйл баримт өөрчлөгдвөл шүүхийн шийдвэрийн үндэслэл өөрчлөгдөж болох байсан тийм шийдвэрлэх үйл баримтыг хэлнэ (William P. Statsky, 1995).
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 05</span>
-              <span class="element-section-tag">ПРОЦЕССЫН ТҮҮХ</span>
-            </div>
-            <h4 class="element-card-title">Шүүхийн шат шатны хөдөлгөөн ба Шалтгаан</h4>
-            <p class="element-card-desc">
-              Хэрэг аль анхан шатны шүүхэд хэзээ очсон, ямар шийдвэр гарсан, талууд ямар үндэслэлээр давж заалдсан, давж заалдах шатны шүүх анхан шатны шийдвэрийг хэвээр үлдээсэн үү, эсхүл хүчингүй болгож өөрчилсөн үү гэдгийг товч тодорхой дэс дараалалтайгаар бичнэ.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 06</span>
-              <span class="element-section-tag">ШИЙДЛИЙН ҮР ДҮН & ҮНДЭСЛЭЛ</span>
-            </div>
-            <h4 class="element-card-title">Holding and Judicial Reasoning</h4>
-            <p class="element-card-desc">
-              Дүн шинжилгээ хийж буй шийдвэрийн гол шийдэл болох тогтоох хэсэг (жишээ нь: "захирамжийг хүчингүй болгов", "гомдлыг хангав") ба шүүх энэ шийдэлд хүрэхийн тулд ямар хуулийн зүйл, заалт, зарчмыг хэрхэн тайлбарлаж хэрэглэсэн тухай хууль зүйн логик тайлбар юм.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Part 4: The Core Analysis Part -->
-      <div style="margin-bottom: var(--space-xl);">
-        <h3 style="font-family: var(--font-headline); font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--outline); padding-bottom: 4px;">
-          4-Р БҮЛЭГ: ДҮН ШИНЖИЛГЭЭ (7–13 дугаар элемент)
-        </h3>
-        <p style="font-size: 0.95rem; color: var(--on-surface-variant);">
-          Аргачлалын хамгийн гол зүрх болсон судалгааны хэсэг. Монгол Улсын онцлогт нийцсэн формаль шалгуур, эрх зүйн асуулт, шүүхийн жишиг, онол, шүүмж үнэлгээ энд багтана.
-        </p>
-
-        <div style="display: grid; gap: var(--space-md);">
-          <div class="element-card" style="cursor: default; border-left: 4px solid var(--outline);">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 07</span>
-              <span class="element-section-tag">ФОРМАЛЬ ШААРДЛАГА (ХЭЛБЭРИЙН ШИНЖИЛГЭЭ)</span>
-            </div>
-            <h4 class="element-card-title">Монгол Улсын аргачлалын онцлог элемент ба ЗХШХШтХ 107-р зүйл</h4>
-            <p class="element-card-desc">
-              Бусад улс оронд формаль шаардлагыг шинжилгээнд тэр бүр тавьдаггүй. Харин Монгол Улсад шүүгчдийн ажлын ачаалал их, найруулга, бүтцийн алдаатай шийдвэр цөөнгүй гардаг нөхцөлийг харгалзан тусгайлан оруулсан. Шүүхийн шийдвэр нь хуульд заасан <strong>4 хэсгээс бүрдсэн эсэхийг</strong> нарийвчлан шалгана:
-              <br>• <strong>1. Удиртгал хэсэг (107.2):</strong> Огноо, газар, шүүх, шүүх бүрэлдэхүүн, оролцогчдыг зөв заасан эсэх.
-              <br>• <strong>2. Тодорхойлох хэсэг (107.3):</strong> Нэхэмжлэлийн шаардлага, хариуцагч, гуравдагч этгээд, өмгөөлөгчийн тайлбарыг бүрэн, тэгш тусгасан эсэх.
-              <br>• <strong>3. Үндэслэх хэсэг (107.4):</strong> Нотлох баримтыг үнэлсэн байдал, хууль хэрэглээний тайлбар, логик шалтгаант холбоог ойлгомжтой бичсэн эсэх.
-              <br>• <strong>4. Тогтоох хэсэг (107.5):</strong> Баримталсан хуулийн заалт, зардлын хуваарилалт, давж заалдах журам, хугацааг тодорхой тусгасан эсэх. Мөн найруулга, үг үсгийн алдаа, УДШ-ийн 2006 оны зөвлөмжид нийцсэн байдлыг дүгнэнэ.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default; border-left: 4px solid var(--primary);">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 08</span>
-              <span class="element-section-tag">АСУУДАЛ (LEGAL ISSUE)</span>
-            </div>
-            <h4 class="element-card-title">Бүрэн хэмжээний асуулт болгон томьёолох арга зүй</h4>
-            <p class="element-card-desc">
-              Шүүхийн шийдвэрийн эрх зүйн гол зангилааг <strong>бүрэн хэмжээний асуулт</strong> хэлбэрээр гаргана. Ингэхдээ:
-              <br>1. <em>Процессын эрх зүйн асуудал</em> (Нэхэмжлэл гаргах хугацаа, харьяалал, урьдчилан шийдвэрлэх ажиллагаа хангагдсан эсэх).
-              <br>2. <em>Материаллаг эрх зүйн асуудал</em> (Захиргааны акт хууль зөрчсөн эсэх, эрх зөрчигдсөн эсэх).
-              <br>Дараа нь шүүх энэ асуултад "тийм" гэж хариулсан уу, "үгүй" гэж хариулсан уу, ямар учир шалтгаант холбоогоор хариулсныг шинжилнэ.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 09</span>
-              <span class="element-section-tag">ӨМНӨ НЬ ГАРЧ БАЙСАН ШҮҮХИЙН ШИЙДВЭР</span>
-            </div>
-            <h4 class="element-card-title">Прецедент ба Шүүхийн практикийн харьцуулалт</h4>
-            <p class="element-card-desc">
-              Төсөөтэй маргааныг өмнө нь шүүхээс хэрхэн шийдвэрлэж байсан шүүхийн жишгийг судална. Улсын дээд шүүхийн шийдвэрүүдийг тэргүүн ээлжинд, давж заалдах шатны магадлалуудыг дараагийн ээлжинд судалж, дүн шинжилгээ хийж буй шийдвэртэй <em>"ижил байр сууринаас"</em> шийдвэрлэсэн үү, <em>"эсрэг байр сууринаас"</em> шийдвэрлэсэн үү гэдгийг бүлэглэн ялгана.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 10</span>
-              <span class="element-section-tag">ЭРХ ЗҮЙН ОНОЛ, ҮЗЭЛ БАРИМТЛАЛ</span>
-            </div>
-            <h4 class="element-card-title">Хууль тайлбарлал ба Доктрины судалгаа</h4>
-            <p class="element-card-desc">
-              Шүүх хуулийг тайлбарлахдаа ямар онолын үзэл баримтлалыг баримталсныг судална. Эрдэмтэн судлаачдын үзэл баримтлал, эх сурвалжуудыг харьцуулж, тухайн захиргааны процессын институтийн мөн чанар (жишээ нь: дотоод хяналт, шүүхийн ачааллыг багасгах, субъектив эрхийн шалгуур)-тай хэрхэн нийцэж буйг задлан шинжилнэ.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 11</span>
-              <span class="element-section-tag">ШИЙДВЭРТ ӨГӨХ ҮНЭЛГЭЭ</span>
-            </div>
-            <h4 class="element-card-title">Судлаачийн шүүмжлэлт байр суурь</h4>
-            <p class="element-card-desc">
-              Шүүхийн шийдэл хууль зүйн логикийн хувьд зөв эсэх, хуулийн заалтыг зорилгод нь нийцүүлэн зөв хэрэглэсэн үү, захиргааны байгууллагад хуулиар олгосон сонгох боломжийн хязгаарыг зөв хянасан уу гэдэгт судлаачийн зүгээс бие даасан, бодитой шүүмжлэлт үнэлгээ өгнө.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 12</span>
-              <span class="element-section-tag">ШИЙДВЭРИЙН АЧ ХОЛБОГДОЛ</span>
-            </div>
-            <h4 class="element-card-title">Хууль хэрэглээ ба Нийгмийн үр нөлөө</h4>
-            <p class="element-card-desc">
-              Уг шийдвэр цаашид шүүхийн практикт шинэ жишиг тогтоосон уу, хуулийн тодорхой бус зохицуулалтыг тайлбарлахад чиглүүлэгч болж чадсан уу, иргэний эрх, хууль ёсны ашиг сонирхлын хамгаалалтад ямар ахиц дэвшил авчирсан бэ гэдгийг тодорхойлно.
-            </p>
-          </div>
-
-          <div class="element-card" style="cursor: default;">
-            <div class="element-card-head">
-              <span class="element-num-badge">№ 13</span>
-              <span class="element-section-tag">ЦААШИД ТУЛГАМДСАН АСУУДАЛ</span>
-            </div>
-            <h4 class="element-card-title">Хуулийн хийдэл, зөрчил ба Шинэ гарц гаргалгаа</h4>
-            <p class="element-card-desc">
-              Тухайн маргааныг шийдвэрлэсэн ч цаашид практикт эргэлзээтэй хэвээр үлдсэн, эсхүл шинээр үүссэн асуудлуудыг нэрлэж, хууль тогтоомжид нэмэлт, өөрчлөлт оруулах санал, УДШ-ээс практикийг нэг мөр болгох тайлбар гаргах шаардлагыг дэвшүүлнэ.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Part 5 -->
-      <div>
-        <h3 style="font-family: var(--font-headline); font-size: 1.5rem; color: var(--primary); border-bottom: 2px solid var(--outline); padding-bottom: 4px;">
-          5-Р БҮЛЭГ: ЭХ СУРВАЛЖ (14 дүгээр элемент)
-        </h3>
-        <div class="element-card" style="cursor: default;">
-          <div class="element-card-head">
-            <span class="element-num-badge">№ 14</span>
-            <span class="element-section-tag">АШИГЛАСАН МАТЕРИАЛ & ХОЛБОГДОХ ШИНЖИЛГЭЭ</span>
-          </div>
-          <h4 class="element-card-title">Шинжлэх ухааны нотолгоо ба Ном зүйн стандарт</h4>
-          <p class="element-card-desc">
-            Дүн шинжилгээг хийхэд ашигласан бүх хууль тогтоомж, Улсын дээд шүүхийн тайлбар зөвлөмж, эрдэм шинжилгээний өгүүлэл, сурах бичиг, тухайн шийдвэрийн талаар өмнө нь бусад судлаачдын бичсэн нийтлэлийг зохих стандартын дагуу нарийвчлан жагсаана.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- V. Interactive Case Analysis Workshop & Auditor -->
-    <section class="content-section" id="workshop">
-      <div class="section-header">
-        <span class="section-tag">V БҮЛЭГ · ИНТЕРАКТИВ СУРГАЛТЫН ТУСЛАХ</span>
-        <h2 class="section-title">Шүүхийн шийдвэрийн дүн шинжилгээний шалгах хуудас & Төлөвлөгч</h2>
-        <p class="section-lede">
-          Өөрийн сонгосон шийдвэрт дүн шинжилгээ хийхдээ 14 элементийг бүрэн хангаж буйгаа шалгаж, эрдэм шинжилгээний түвшний үнэлгээ авч, бэлэн загвар төлөвлөгөөгөө экспортлон ашиглана уу.
-        </p>
-      </div>
-
-      <div class="workshop-grid">
-        <!-- Checklist & Score column -->
-        <div class="workshop-checklist-container">
-          <h3 style="font-family: var(--font-headline); font-size: 1.3rem; color: var(--primary); margin-top: 0;">
-            14 Элементийн чанарын шалгах хуудас
-          </h3>
-          <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin-bottom: var(--space-md);">
-            Бэлтгэсэн элементүүдээ чагтлан дүн шинжилгээнийхээ бүрдлийг шалгана уу:
-          </p>
-
-          <div class="progress-bar-wrap">
-            <div class="progress-labels">
-              <span>Хангасан байдал:</span>
-              <span id="progressPercent">0% (0/14)</span>
-            </div>
-            <div class="progress-track">
-              <div id="progressFill" class="progress-fill"></div>
-            </div>
-            <div id="scoreBadge" class="score-badge badge-init">Бэлтгэл хангагдаагүй байна</div>
-          </div>
-
-          <table class="check-table">
-            <tbody>
-              <tr>
-                <td><input type="checkbox" id="chk1" onchange="updateAuditProgress()"></td>
-                <td><label for="chk1"><strong>01.</strong> Шийдвэрийг агуулгаар нэрлэсэн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk2" onchange="updateAuditProgress()"></td>
-                <td><label for="chk2"><strong>02.</strong> Шүүхийн шатлалыг ухрах дарааллаар бичсэн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk3" onchange="updateAuditProgress()"></td>
-                <td><label for="chk3"><strong>03.</strong> Албан ёсны эх сурвалжийг тодорхой дурдсан</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk4" onchange="updateAuditProgress()"></td>
-                <td><label for="chk4"><strong>04.</strong> Зөвхөн гол үйл баримтыг ялгаж авсан (Statsky)</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk5" onchange="updateAuditProgress()"></td>
-                <td><label for="chk5"><strong>05.</strong> Процессын түүхийг тодорхой хураангуйлсан</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk6" onchange="updateAuditProgress()"></td>
-                <td><label for="chk6"><strong>06.</strong> Тогтоох & Үндэслэх хэсгийн гол шийдлийг тусгасан</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk7" onchange="updateAuditProgress()"></td>
-                <td><label for="chk7"><strong>07.</strong> Формаль шаардлага (107-р зүйл, найруулга)-ыг үнэлсэн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk8" onchange="updateAuditProgress()"></td>
-                <td><label for="chk8"><strong>08.</strong> Эрх зүйн асуудлыг бүрэн асуулт болгон тавьсан</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk9" onchange="updateAuditProgress()"></td>
-                <td><label for="chk9"><strong>09.</strong> Өмнөх шүүхийн шийдвэр, жишгийг харьцуулсан</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk10" onchange="updateAuditProgress()"></td>
-                <td><label for="chk10"><strong>10.</strong> Эрх зүйн онол, хууль тайлбарлалыг шинжилсэн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk11" onchange="updateAuditProgress()"></td>
-                <td><label for="chk11"><strong>11.</strong> Шүүхийн шийдэлд бие даасан шүүмж үнэлгээ өгсөн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk12" onchange="updateAuditProgress()"></td>
-                <td><label for="chk12"><strong>12.</strong> Практикт үзүүлэх ач холбогдлыг тодорхойлсон</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk13" onchange="updateAuditProgress()"></td>
-                <td><label for="chk13"><strong>13.</strong> Цаашид тулгамдсан асуудал, саналаа дэвшүүлсэн</label></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" id="chk14" onchange="updateAuditProgress()"></td>
-                <td><label for="chk14"><strong>14.</strong> Ашигласан ном зүйг стандартын дагуу бүрдүүлсэн</label></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Generator / Template Builder column -->
-        <div class="generator-container">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="font-family: var(--font-headline); font-size: 1.3rem; color: var(--primary); margin: 0;">
-              Дүн шинжилгээний бүтэц бүтээгч
-            </h3>
-            <span style="font-family: var(--font-label); font-size: 0.75rem; color: var(--outline);">ИНТЕРАКТИВ ЗАГВАР</span>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="presetSelector">Бэлэн загвар сонгох:</label>
-            <select id="presetSelector" class="form-select" onchange="loadPresetData(this.value)">
-              <option value="empty">-- Шинээр өөрөө бичих (Хоосон) --</option>
-              <option value="land" selected>Газрын эрх зүйн маргаан (ЗХШХШтХ 54.1.3)</option>
-              <option value="labor">Хөдөлмөрийн эрх зүйн маргаан (Ажлаас халагдсан)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="inTitle">Шинжилгээний нэр (Агуулгаар):</label>
-            <input type="text" id="inTitle" class="form-input" oninput="renderOutlinePreview()">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="inCourt">Шийдвэрлэсэн шүүх, огноо, дугаар:</label>
-            <input type="text" id="inCourt" class="form-input" oninput="renderOutlinePreview()">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="inFacts">Гол үйл баримт (Statsky-ийн шалгуураар):</label>
-            <textarea id="inFacts" rows="2" class="form-textarea" oninput="renderOutlinePreview()"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="inIssue">Гол эрх зүйн асуудал (Бүрэн асуулт):</label>
-            <input type="text" id="inIssue" class="form-input" oninput="renderOutlinePreview()">
-          </div>
-
-          <div>
-            <span class="form-label" style="display: block; margin-bottom: 4px;">Урьдчилан харах & Экспорт:</span>
-            <div id="outlinePreview" class="output-preview-box"></div>
-          </div>
-
-          <div class="btn-row">
-            <button class="btn-primary" onclick="copyOutlineText()">Загварыг хуулах (Copy)</button>
-            <button class="btn-secondary" onclick="checkAllForPreset()">Бүх элементийг чагтлах</button>
-            <span id="copyFeedback" style="font-size: 0.8rem; color: var(--secondary); display: none; font-weight: 600;">✓ Хуулагдлаа!</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VI. Authoritative Sources & Statutes -->
-    <section class="content-section" id="references">
-      <div class="section-header">
-        <span class="section-tag">VI БҮЛЭГ · ХУУЛЬ ЗҮЙН ЭХ СУРВАЛЖ & НОМ ЗҮЙ</span>
-        <h2 class="section-title">Ашигласан материал ба Лавлах ном зүй</h2>
-        <p class="section-lede">
-          Энэхүү аргачлал болон интерактив хөтөчид баримталсан үндэсний хууль тогтоомж, эрдэм шинжилгээний бүтээлүүд.
-        </p>
-      </div>
-
-      <div class="biblio-list">
-        <div class="biblio-card">
-          <div class="biblio-title">Шүүхийн шийдвэрт дүн шинжилгээ хийх аргачлал</div>
-          <div class="biblio-meta">Шүүхийн судалгаа, мэдээлэл, сургалтын хүрээлэн (ШСМСХ), Улаанбаатар хот, 2015 он.</div>
-        </div>
-        <div class="biblio-card">
-          <div class="biblio-title">ЗХШХШтХ-ийн 54 дүгээр зүйлийн 54.1.3 дахь заалтын хэрэгжилт</div>
-          <div class="biblio-meta">Зоригтын Маргад, Монголын шүүх, эрх зүй судлал сэтгүүл, 2024–2025 он.</div>
-        </div>
-        <div class="biblio-card">
-          <div class="biblio-title">Захиргааны ерөнхий хууль: үзэл баримтлал, хэрэглээ</div>
-          <div class="biblio-meta">Дугарын Сүнжид, Улаанбаатар: Мөнхийн Үсэг, 2017 он.</div>
-        </div>
-        <div class="biblio-card">
-          <div class="biblio-title">Захиргааны процессын эрх зүй (2 дахь хэвлэл)</div>
-          <div class="biblio-meta">Гочоогийн Банзрагч, Улаанбаатар: Мөнхийн Үсэг, 2023 он.</div>
-        </div>
-        <div class="biblio-card">
-          <div class="biblio-title">Монгол Улсын Үндсэн хууль, ЗЕХ, ЗХШХШтХ, ГтХ</div>
-          <div class="biblio-meta">Монгол Улсын Их Хурал, Хүчин төгөлдөр хууль тогтоомжийн эмхэтгэл.</div>
-        </div>
-        <div class="biblio-card">
-          <div class="biblio-title">Case Analysis and Fundamentals of Legal Writing</div>
-          <div class="biblio-meta">William P. Statsky, Delmar, Cengage Learning, Fourth edition, 1995.</div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
+  <!-- ЭНД ТАНЫ НЭР ТОД ХАРАГДАХ ХЭСЭГ -->
   <footer style="background-color: var(--primary); color: var(--surface-container-high); padding: var(--space-xl) var(--space-md); border-top: 3px solid var(--outline); text-align: center; font-size: 0.85rem;">
     <div style="max-width: 900px; margin: 0 auto;">
+      <p style="color: #ffffff; font-size: 1.1rem; font-weight: 600; margin-bottom: var(--space-xs);">
+        Судлаач / Боловсруулсан: Б.Бямбадорж
+      </p>
       <p style="font-family: var(--font-headline); font-size: 1.15rem; color: var(--on-primary); margin-bottom: var(--space-xs);">
         Шүүхийн шийдвэрт дүн шинжилгээ хийх 5 үндсэн бүтэц, 14 элементийн нэгдсэн арга зүйн хөтөч
       </p>
@@ -1981,523 +402,5 @@
     </div>
   </footer>
 
-  <api-shim></api-shim>
-
-  <script>
-    /* Data store for the 14 elements */
-    const ELEMENTS_DATA = {
-      1: {
-        num: "01",
-        section: "1. ТАНИЛЦУУЛАХ ХЭСЭГ",
-        title: "Шүүхийн шийдвэрийн нэр",
-        nature: "formal",
-        def: "Шүүхийн шийдвэрт дүн шинжилгээ хийхдээ хэргийн зохигчид хэн байх нь судлаач болон уншигчдад хоёрдогч асуудал юм. Гагцхүү энэ шийдвэр ямар эрх зүйн маргааныг хэрхэн шийдвэрлэснийг шууд илтгэх агуулгаар буюу сэдвээр нэрлэх нь зүйтэй.",
-        checklist: [
-          "Зохигчдын нэрийг бус, маргааны гол сэдэв, эрх зүйн асуудлыг нэрд тусгасан байх",
-          "Маргааны төрлийг тодорхой илэрхийлсэн байх (хөдөлмөр, газар, татвар, гэрээ г.м)",
-          "Уншигч гарчгийг уншаад судлаач хэргийн гол асуудлыг зөв ойлгосныг таньж чадахуйц байх"
-        ],
-        warnings: [
-          "'Иргэн Батын нэхэмжлэлтэй захиргааны хэрэг' гэх мэтээр ерөнхийлөн зохигчийн нэрээр нэрлэхээс зайлсхийх",
-          "Хэт нуршуу, шийдвэрийн бүх үйл явдлыг гарчигтаа багтаах гэж оролдохгүй байх"
-        ],
-        statute: "ИХШХШтХ, ЗХШХШтХ, ШСМСХ-ийн аргачлалын 1.(1) дэх хэсэг",
-        example: "'Газрын эрхийн маргаан таслах зөвлөлд хандах шаардлага ба ЗХШХШтХ-ийн 54 дүгээр зүйлийн 54.1.3-ын хууль хэрэглээний зөрүүг шийдвэрлэсэн хэрэг'",
-        tip: "Ишлэл татах уламжлалт хэлбэрт шүүхийн нэр, огноо, дугаарыг хэрэглэх боловч судалгааны ажлын нэр нь заавал агуулгаар байх ёстой."
-      },
-      2: {
-        num: "02",
-        section: "1. ТАНИЛЦУУЛАХ ХЭСЭГ",
-        title: "Шийдвэрлэсэн шүүх, шийдвэрийн огноо",
-        nature: "formal",
-        def: "Дүн шинжилгээ хийж буй шийдвэрийг гаргасан шүүх болон түүний өмнөх шатны шүүхүүдийн шийдвэрийг хамгийн сүүлд гаргасан шийдвэрээс нь уруудах дарааллаар дараалуулан тоочиж бичнэ.",
-        checklist: [
-          "Сүүлчийн шатны шийдвэрээс ухрах дарааллыг баримталсан байх (Хяналт -> Давж заалдах -> Анхан)",
-          "Шүүхийн шийдвэрийн төрлийг хуулийн дагуу зөв нэрлэсэн байх (Шүүхийн шийдвэр, магадлал, тогтоол, шүүгчийн захирамж)",
-          "Шийдвэрийн он сар өдөр болон бүртгэлийн албан ёсны дугаарыг бүрэн тусгасан байх"
-        ],
-        warnings: [
-          "Анхан шатнаас нь эхэлж бичих нь шинжилгээний одоогийн түвшнийг төөрөгдүүлдэг",
-          "Магадлал болон тогтоолыг хооронд нь андуурч хэрэглэх"
-        ],
-        statute: "ЗХШХШтХ-ийн 3.1.4 (анхан шатны шийдвэр), 3.1.5 (тогтоол), 3.1.6 (магадлал), 3.1.7 (захирамж)",
-        example: "1. Улсын дээд шүүхийн 2025.05.06-ны өдрийн 001/ХТ2025/0214 тогтоол\n2. ЗХДЗШШ-ийн 2024.08.06-ны өдрийн 221/ШТ2024/0624 тогтоол\n3. НдЗХАШШ-ийн 2024.07.16-ны өдрийн 128/ШЗ2024/5843 захирамж",
-        tip: "Хэрэв шийдвэр нь хяналтын шатаар ороогүй бол давж заалдах шатны шийдвэрийг хамгийн дээр нь бичнэ."
-      },
-      3: {
-        num: "03",
-        section: "1. ТАНИЛЦУУЛАХ ХЭСЭГ",
-        title: "Эх сурвалж",
-        nature: "formal",
-        def: "Дүн шинжилгээ хийж буй шүүхийн шийдвэрийг бүрэн эхээр нь хаанаас олж авч болох тухай албан ёсны эх сурвалжийг тодорхой заана.",
-        checklist: [
-          "Албан ёсны бүртгэл мэдээллийн эх сурвалжийг заах",
-          "Хэвлэмэл эмхэтгэл, сэтгүүл эсвэл шүүхийн албан ёсны цахим системийг нэрлэх",
-          "Бусад судлаачид магадлах боломжтой нарийвчилсан холбоос, индексийг өгөх"
-        ],
-        warnings: [
-          "Тодорхой бус эх сурвалж эсвэл хувь хүний гар дээрх хуулбарыг эх сурвалж болгон заах",
-          "Хэвлэгдсэн огноо, дугаарыг гээгдүүлэх"
-        ],
-        statute: "Шүүхийн захиргааны тухай хууль, ШЕЗ-ийн Шүүхийн шийдвэрийн цахим сангийн журам",
-        example: "Шүүхийн шийдвэрийн нэгдсэн цахим сан (shuukh.mn); Захиргааны хэргийн бүртгэл, хяналтын нэгдсэн систем, 2024 он.",
-        tip: "Улсын дээд шүүхийн сонгомол шийдвэрийн эмхэтгэлд орсон шийдвэр бол эмхэтгэлийн боть, хуудсыг заавал бичнэ."
-      },
-      4: {
-        num: "04",
-        section: "2. ҮЙЛ ЯВДЛЫН АГУУЛГА",
-        title: "Гол үйл баримт (Material Facts)",
-        nature: "procedural",
-        def: "Болсон гол үйл явдлыг нэхэмжлэл, хариуцагчийн тайлбараас шууд хуулбарлахгүй, харин шийдвэрийн үндэслэх хэсгээс нотлох баримтаар тогтоогдсон үйл баримтыг олж, боловсруулж бичнэ. Гол үйл баримт гэдэг нь: 'тухайн үйл баримт өөрчлөгдвөл шийдвэрийн үндэслэл өөрчлөгдөж болох байсан үйл баримт' юм (William P. Statsky).",
-        checklist: [
-          "Зөвхөн нотлох баримтаар шүүхээс тогтоогдсон баримтуудыг авах",
-          "Шийдвэрийн үр дүнд шууд нөлөөлөх хууль зүйн ач холбогдолтой фактуудыг он дарааллаар найруулах",
-          "Маргаанд хамааралгүй хувийн асуудал, илүүц үйл явдлыг хасах"
-        ],
-        warnings: [
-          "Шүүхээр нотлогдоогүй талуудын гомдол, гонсойлтыг шууд факт болгон хуулах",
-          "Хэт нуршуу эсвэл гол үйл баримтыг орхигдуулах"
-        ],
-        statute: "ЗХШХШтХ-ийн 56.1.3, 107.4 (Үндэслэх хэсэгт нотлох баримтыг үнэлсэн байдал)",
-        example: "Иргэн З нь хүсэлт гаргасан газрыг нь шийдвэрлэлгүй өөр иргэнд эзэмшүүлсэн дүүргийн Засаг даргын шийдвэрийг эс зөвшөөрч, Нийслэлийн Газар зохион байгуулалтын албанд гомдол гарган 2024.06.05-нд татгалзсан хариу албан бичгийг гардан авсан байна.",
-        tip: "Туршиж үзэх асуулт: Хэрэв энэ баримт байхгүй байсан бол шүүхийн шийдэл өөр байх байсан уу? Тийм бол энэ нь 'Гол үйл баримт' мөн."
-      },
-      5: {
-        num: "05",
-        section: "3. ШИЙДВЭРЛЭСЭН БАЙДАЛ",
-        title: "Процессын түүх (Procedural History)",
-        nature: "procedural",
-        def: "Маргаан анхан шатны шүүхээс давж заалдах болон хяналтын шат хүртэл хэрхэн дамжсан, шат шатны шүүх ямар шийдэл гаргасан, оролцогчид ямар шалтгаанаар гомдол гаргасан дарааллыг танилцуулна.",
-        checklist: [
-          "Анхан шатны шүүхийн шийдлийн товч утга ба үндэслэл",
-          "Давж заалдах шатны магадлалын шийдэл ба үндэслэл",
-          "Талуудын гаргасан гомдлын гол зангилаа асуудал"
-        ],
-        warnings: [
-          "Процессын үе шат бүрийн шийдлийг хольж хутгах",
-          "Хэрэг буцаагдсан эсэх, дахин хэлэлцэгдсэн түүхийг орхигдуулах"
-        ],
-        statute: "ЗХШХШтХ-ийн 107, 127 дугаар зүйл (Шүүхийн шийдвэр ба хянан шийдвэрлэх ажиллагаа)",
-        example: "Анхан шатны шүүх ЗХШХШтХ 54.1.3-аар нэхэмжлэлийг татгалзсан. Нэхэмжлэгч 'гомдол гаргах журмыг хангасан' гэж давж заалдсан боловч Давж заалдах шатны шүүх захирамжийг хэвээр үлдээв.",
-        tip: "Процессын түүхийг 1-2 цэгцтэй догол мөрөөр, хугацааны дэс дараалалтай бичвэл хамгийн ойлгомжтой байдаг."
-      },
-      6: {
-        num: "06",
-        section: "3. ШИЙДВЭРЛЭСЭН БАЙДАЛ",
-        title: "Одоогийн шийдвэрийн шийдэл ба үндэслэл",
-        nature: "procedural",
-        def: "Дүн шинжилгээ хийж буй шийдвэрийн тогтоох хэсгийн гол үр дүн болон түүний хууль зүйн шалтгаант холбоо, үндэслэлийг тодорхойлно.",
-        checklist: [
-          "Эхний өгүүлбэрт шийдлийн үр дүнг товч бичих (жишээ: 'захирамжийг хүчингүй болгов', 'нэхэмжлэлийг хангав')",
-          "Шүүхийн түшиглэсэн хуулийн зүйл заалт, тайлбарыг иш татах",
-          "Шүүхээс хийсэн гол дүгнэлтийг тодорхой дурдах"
-        ],
-        warnings: [
-          "Тогтоох хэсгийн хуулийн заалтуудыг бүгдийг тайлбаргүйгээр хуулж тавих",
-          "Шүүхийн өөрийнх нь хийсэн дүгнэлтийг судлаачийн шүүмжтэй хутгах"
-        ],
-        statute: "ЗХШХШтХ-ийн 107.4, 107.5 дугаар зүйл",
-        example: "ЗХДЗШШ-ийн 2024 оны 859 дүгээр тогтоолоор анхан шатны шүүгчийн захирамжийг хүчингүй болгов. Үндэслэл: Нэхэмжлэгч дээд шатны албан тушаалтанд гомдол гаргаж хариу авсан нь урьдчилан шийдвэрлүүлэх шаардлагыг хангасан гэж үзнэ.",
-        tip: "Шүүхийн үндэслэлийг хэт урт биш, хамгийн гол хууль зүйн дүгнэлтийг нь 2-3 өгүүлбэрт хураангуйлж тавина."
-      },
-      7: {
-        num: "07",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Формаль шаардлага (Хэлбэрийн үнэлгээ)",
-        nature: "formal",
-        def: "Монгол Улсын онцлог элемент! Шүүгчийн ажлын ачаалал ихтэй манай улсын нөхцөлд шийдвэрийн бүтэц, найруулга, хуулийн шаардлага хангагдсан эсэхийг тусгайлан үнэлдэг. ЗХШХШтХ-ийн 107-р зүйлд заасан 4 хэсэг бүрэн тусгагдсан эсэх, найруулга, нэр томьёо, үг үсгийн алдааг хянана.",
-        checklist: [
-          "Удиртгал, Тодорхойлох, Үндэслэх, Тогтоох 4 хэсгийн бүтцийг хуульд нийцүүлэн баримталсан эсэх",
-          "Үндэслэх хэсэгт нотлох баримтуудыг бодитой харьцуулан үнэлж, шалтгаант холбоог заасан эсэх",
-          "УДШ-ийн 2006 оны 'Шүүхийн шийдвэрийг боловсруулах аргачлалын тухай' зөвлөмжид нийцсэн эсэх",
-          "Үг үсэг, хууль зүйн нэр томьёо, хэл найруулгын алдаа байгаа эсэх"
-        ],
-        warnings: [
-          "Формаль шаардлагыг орхигдуулах (олон улсын загварыг шууд хуулснаас болдог нийтлэг алдаа)",
-          "Зөвхөн үг үсгийн алдааг дурдаад, шийдвэрийн үндэслэх хэсгийн бүтцийн доголдлыг хаяглахгүй өнгөрөх"
-        ],
-        statute: "ЗХШХШтХ-ийн 107 дугаар зүйл, ИХШХШтХ-ийн 118 дугаар зүйл, УДШ-ийн 2006 оны зөвлөмж",
-        example: "Шүүхийн захирамжийн үндэслэх хэсэгт Газрын тухай хуулийн 601.1 дэх заалтыг дурдсан атлаа 601.3 дахь хэсгийн 'болно' гэх заалтын утга агуулгыг үндэслэлтэйгээр тайлбарлаагүй, хэлбэрийн хувьд учир дутагдалтай болсон.",
-        tip: "Монгол Улсын эх газрын тогтолцоонд шүүхийн шийдвэрийн хэл найруулга, үндэслэгээний стандарт эрх зүйн соёлын чухал шалгуур болдог."
-      },
-      8: {
-        num: "08",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Эрх зүйн асуудал (Legal Issue)",
-        nature: "substantive",
-        def: "Тухайн шийдвэрээр хөндөгдсөн эрх зүйн гол маргааныг БҮРЭН ХЭМЖЭЭНИЙ АСУУЛТ болгон томьёолно. Процессын болон материаллаг эрх зүйн асуудлыг ялгаж, тухайн асуултад шүүх 'Тийм' эсвэл 'Үгүй' гэж хэрхэн хариулсныг тодорхойлно.",
-        checklist: [
-          "Бүрэн өгүүлбэр, асуултын тэмдэгтэй асуулт болгон томьёолсон байх",
-          "Процессын эрх зүйн асуудал ба Материаллаг эрх зүйн асуудлыг тусад нь ялгасан байх",
-          "Шүүх тухайн асуултад хэрхэн хариулсан учир шалтгааныг тодорхойлсон байх"
-        ],
-        warnings: [
-          "'Газрын маргаан' гэх мэтээр ерөнхий сэдэв бичих (энэ нь эрх зүйн асуулт биш)",
-          "Хэргийн оролцогчдын хувийн маргааныг эрх зүйн асуулттай хутгах"
-        ],
-        statute: "ЗХШХШтХ-ийн 6.3 (Мэтгэлцэх зарчим), 106.7 (Хуулийн хязгаар ба зорилго)",
-        example: "'Газрын тухай хуулийн 601.3-д заасан Нийслэлийн газрын эрхийн маргаан таслах зөвлөлд гомдол гаргах эрх нь шүүхэд хандахаас өмнө заавал биелүүлэх шаардлага мөн үү?' — Шүүхийн хариулт: 'Тийм' (гэвч энэ нь маргаантай).",
-        tip: "Асуултыг зөв тавьж чадвал шийдвэрийн дүн шинжилгээний 50% амжилттай болсонд тооцогддог."
-      },
-      9: {
-        num: "09",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Өмнө нь гарч байсан шүүхийн шийдвэр (Прецедент)",
-        nature: "procedural",
-        def: "Тухайн эрх зүйн асуудалтай холбоотой өмнө нь гарч байсан төсөөтэй хэргүүдийг судалж, шүүхээс ямар жишиг, үзэл баримтлалыг баримталж ирснийг харьцуулна. Шүүхийн шийдвэрүүдийг 'ижил байр суурьтай' ба 'эсрэг байр суурьтай' гэж ангилна.",
-        checklist: [
-          "Улсын дээд шүүхийн тогтоолыг тэргүүн ээлжинд сонгосон байх",
-          "Хэрэв УДШ-ийн шийдвэр байхгүй бол Давж заалдах шатны магадлалуудыг харьцуулсан байх",
-          "Ижил байр суурьтай болон эсрэг байр суурьтай шийдвэрүүдийг ялган ангилсан байх"
-        ],
-        warnings: [
-          "Бүх хамааралтай шийдвэрийг ялгаваргүйгээр бүгдийг хуулж хэт нуршуу болгох",
-          "Шүүхийн жишгийг цаг хугацааны дараалалгүйгээр замбараагүй бичих"
-        ],
-        statute: "Монгол Улсын шүүхийн тухай хууль (Шүүхийн шийдвэрийн жишиг, тайлбар)",
-        example: "2024 оны 75 захирамжийн 45-ыг давж заалдах шат хүчингүй болгосон нь анхан болон давж заалдах шатны хооронд хууль хэрэглээний эсрэг тэсрэг зөрүүтэй байр суурь ноёрхож буйг харуулж байна.",
-        tip: "Шүүхийн практикт эргэлт, өөрчлөлт гарсан бол түүнийг онцлон тэмдэглэх нь судалгааны чанарыг эрс өсгөдөг."
-      },
-      10: {
-        num: "10",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Эрх зүйн онол, үзэл баримтлал",
-        nature: "substantive",
-        def: "Эрх зүйн маргаантай холбоотой онолын номлол, зарчим, хууль тайлбарлах арга зүйг судалж, эрдэмтдийн бүтээлийг эш татан тайлбарлана.",
-        checklist: [
-          "Салбарын эрдэмтэн судлаачдын үзэл баримтлалыг судалж тусгасан байх",
-          "Хууль тайлбарлах үндсэн аргачлалууд (хэл зүй, системчлэл, телеологи буюу зорилгын арга)-ыг хэрэглэсэн байх",
-          "Хууль тогтоогчийн анхны үзэл баримтлал, зорилгыг судалсан байх"
-        ],
-        warnings: [
-          "Онолын нэр томьёог хууль зүйн практиктай холбохгүйгээр хоосон номлох",
-          "Эх сурвалжийг иш татахгүйгээр өөрийн санаа мэт бичих"
-        ],
-        statute: "Захиргааны эрх зүйн ерөнхий онол, Үндсэн хуулийн суурь зарчмууд",
-        example: "Захиргааны урьдчилан шийдвэрлэх ажиллагаа нь захиргааны өөрийн дотоод хяналт (self-correction), шүүхийн ачааллыг багасгах (procedural economy) болон субъектив эрхийн хамгаалалт гэсэн үндсэн гурван онолын зорилготой (Й.Пуделька, Г.Банзрагч).",
-        tip: "Онолын зөрүүтэй байр суурь байвал аль алиныг нь бодитой дурдаж, өөрийн байр сууриа үндэслэлтэй хамгаална."
-      },
-      11: {
-        num: "11",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Шийдвэрт өгөх үнэлгээ (Шүүмж)",
-        nature: "critical",
-        def: "Судлаачийн байр сууринаас тухайн шүүхийн шийдвэр хууль зүйн үндэслэлтэй болж чадсан эсэх, логик зөрчил байгаа эсэхэд шүүмжлэлтэй үнэлэлт дүгнэлт өгнө.",
-        checklist: [
-          "Шүүхийн хууль зүйн логикт бодитой дүгнэлт өгсөн байх",
-          "Хуулийн хэм хэмжээний хязгаарыг шүүх хэтрүүлсэн эсэхийг үнэлсэн байх",
-          "Судлаачийн байр суурь нотлох баримт, хууль, онолд тулгуурласан байх"
-        ],
-        warnings: [
-          "Шүүхийг үндэслэлгүйгээр сэтгэл хөдлөлөөр шүүмжлэх",
-          "Зөвхөн шийдвэрийн үр дүнг зөвтгөөд хууль зүйн алдааг нь өнгөрөөх"
-        ],
-        statute: "ЗХШХШтХ-ийн 106.7, Үндсэн хуулийн 16.14 (Шүүхэд гомдол гаргах эрх)",
-        example: "Шүүх дүүргийн Засаг даргын шийдвэрийг нийслэлийн Засаг даргын шийдвэртэй шууд адилтган үзэж, харьяалалгүй байгууллагад хандахыг шаардан нэхэмжлэлийг татгалзсан нь хууль зүйн логикийн хувьд үндэслэлгүй болжээ.",
-        tip: "Шүүмжлэл нь үгүйсгэхийн төлөө бус, шийдлийг сайжруулах хууль зүйн бүтээлч шинжтэй байх учиртай."
-      },
-      12: {
-        num: "12",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Шүүхийн шийдвэрийн ач холбогдол",
-        nature: "critical",
-        def: "Уг шийдвэр эрх зүйн практикт ямар жишиг тогтоосон, иргэний эрхийн хамгаалалт болон шүүн таслах ажиллагааны чанарт ямар хувь нэмэр оруулсныг үнэлнэ.",
-        checklist: [
-          "Хууль хэрэглээний практикийг нэг мөр болгоход үзүүлэх нөлөө",
-          "Нийгэм, эдийн засгийн бодит үр дагавар",
-          "Хуулийн тайлбарыг баяжуулсан байдал"
-        ],
-        warnings: [
-          "Бүх шийдвэрийг 'маш өндөр ач холбогдолтой' гэж ерөнхийлөн магтах",
-          "Сөрөг жишиг тогтоосон шийдвэрийн эрсдэлийг тодорхойлоогүй орхих"
-        ],
-        statute: "Шүүхийн судалгаа, мэдээлэл, сургалтын хүрээлэнгийн удирдамж",
-        example: "Тус маргааныг эцэслэн шийдвэрлэснээр захиргааны байгууллагын дутуу тайлбартай татгалзлыг шүүхээс цэгцлэх, иргэний шүүхэд хандах эрхийг үндэслэлгүйгээр хаахгүй байх практик чиг баримжааг бий болгов.",
-        tip: "Эерэг жишиг төдийгүй хууль буруу тайлбарлагдсанаас үүдэх сөрөг үр дагаврыг ч ач холбогдлын хүрээнд авч үзэж болно."
-      },
-      13: {
-        num: "13",
-        section: "4. ДҮН ШИНЖИЛГЭЭ",
-        title: "Цаашид тулгамдсан асуудал",
-        nature: "critical",
-        def: "Тухайн шийдвэрээр бүрэн зохицуулагдаагүй үлдсэн хуулийн хийдэл, практикийн зөрчлийг гаргаж, хууль тогтоомжийг сайжруулах санал дэвшүүлнэ.",
-        checklist: [
-          "Хуулийн цоорхой, хийдэл, давхардлыг тодорхой нэрлэсэн байх",
-          "Шүүхийн практикт шийдвэрлэгдээгүй үлдсэн дараагийн асуудлыг тусгасан байх",
-          "Хууль тогтоомжид нэмэлт, өөрчлөлт оруулах тодорхой санал дэвшүүлсэн байх"
-        ],
-        warnings: [
-          "Хэрэгтэй хамааралгүй хууль тогтоомжийн шинэтгэлийг хамаатуулж бичих",
-          "Зөвхөн асуудлыг тоочоод шийдлийн гарц гаргалгаа дэвшүүлэхгүй байх"
-        ],
-        statute: "Хууль тогтоомжийн тухай хууль, Газрын тухай хуулийн 601, 602-р зүйл",
-        example: "Газрын тухай хуулийн 601.3 дахь хэсгийн 'гомдол гаргаж болно' гэх заалтын 'болно' гэснийг заавал биелүүлэх үүрэг үү, эсхүл иргэний сонголт уу гэдгийг тодорхой болгож хуульд өөрчлөлт оруулах шаардлагатай.",
-        tip: "Энэ хэсэг нь судалгааны ажлын цаашдын эрэл хайгуул, эрдэм шинжилгээний дараагийн алхам болдог."
-      },
-      14: {
-        num: "14",
-        section: "5. ЭХ СУРВАЛЖ",
-        title: "Ашигласан материал, ном зүй",
-        nature: "formal",
-        def: "Дүн шинжилгээг хийхэд ашигласан бүх хууль тогтоомж, шүүхийн шийдвэр, эрдэм шинжилгээний ном зохиол, судалгааны бүтээлийг зохих стандартын дагуу нарийвчлан жагсаана.",
-        checklist: [
-          "Хууль тогтоомж, дүрэм журмыг цаг хугацааны дарааллаар жагсаах",
-          "Эрдэм шинжилгээний ном, өгүүлэл, сурах бичгийг зохиогчийн нэрээр цагаан толгойн дарааллаар бичих",
-          "Ашигласан шүүхийн шийдвэр, албан ёсны тогтоолуудыг бүрэн дугаар, огноотой нь тусгах"
-        ],
-        warnings: [
-          "Бичвэр дотор ашиглаагүй материалыг нэр хүнд өсгөх зорилгоор жагсаалтад оруулах",
-          "Ишлэлийн эх сурвалжийн хуудас, огноог дутуу бичих"
-        ],
-        statute: "Эрдэм шинжилгээний бүтээлийн эшлэл татах нэгдсэн стандарт",
-        example: "1. Дугарын Сүнжид, Захиргааны ерөнхий хууль: үзэл баримтлал, хэрэглээ, УБ: 2017.\n2. Гочоогийн Банзрагч, Захиргааны процессын эрх зүй, 2023.",
-        tip: "Хууль зүйн бичвэрт ном зүй нь судалгааны чанар, найдвартай байдлын үндсэн баталгаа болдог."
-      }
-    };
-
-    /* Filter by Macro Section */
-    function filterBySection(sectionKey, clickedBtn) {
-      const steps = document.querySelectorAll('.roadmap-step');
-      steps.forEach(s => s.classList.remove('active'));
-      if (clickedBtn) clickedBtn.classList.add('active');
-
-      const cards = document.querySelectorAll('.element-card');
-      cards.forEach(card => {
-        const cardSec = card.getAttribute('data-section');
-        if (sectionKey === 'all' || cardSec === sectionKey) {
-          card.classList.remove('is-hidden');
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-    }
-
-    /* Filter by Nature */
-    function filterByNature(natureKey, clickedBtn) {
-      const btns = document.querySelectorAll('.filter-btn');
-      btns.forEach(b => b.classList.remove('active'));
-      if (clickedBtn) clickedBtn.classList.add('active');
-
-      const cards = document.querySelectorAll('.element-card');
-      cards.forEach(card => {
-        const cardNature = card.getAttribute('data-nature');
-        if (natureKey === 'all' || cardNature === natureKey) {
-          card.classList.remove('is-hidden');
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-    }
-
-    /* Search inside elements */
-    function handleElementSearch(query) {
-      const q = query.trim().toLowerCase();
-      const cards = document.querySelectorAll('.element-card');
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (!q || text.includes(q)) {
-          card.classList.remove('is-hidden');
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-    }
-
-    /* Open Dynamic Deep Dive Inspector */
-    function openInspector(elementId) {
-      const data = ELEMENTS_DATA[elementId];
-      if (!data) return;
-
-      const panel = document.getElementById('inspectorPanel');
-      if (!panel) return;
-
-      // Highlight selected card
-      document.querySelectorAll('.element-card').forEach(c => c.classList.remove('selected'));
-      const activeCard = document.getElementById(`el-card-${elementId}`);
-      if (activeCard) activeCard.classList.add('selected');
-
-      // Populate data
-      document.getElementById('inspMeta').textContent = `${data.section} · ЭЛЕМЕНТ ${data.num}`;
-      document.getElementById('inspTitle').textContent = `№${data.num}. ${data.title}`;
-      document.getElementById('inspDefinition').textContent = data.def;
-
-      // Checklist
-      const checkUl = document.getElementById('inspChecklist');
-      checkUl.innerHTML = '';
-      data.checklist.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'checklist-item';
-        li.innerHTML = `<span class="checklist-bullet">✓</span> <span>${item}</span>`;
-        checkUl.appendChild(li);
-      });
-
-      // Warnings
-      const warnUl = document.getElementById('inspWarnings');
-      warnUl.innerHTML = '';
-      data.warnings.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'warning-item';
-        li.innerHTML = `<span class="warning-bullet">⚠</span> <span>${item}</span>`;
-        warnUl.appendChild(li);
-      });
-
-      // Statute & Example & Tip
-      document.getElementById('inspStatute').textContent = data.statute;
-      document.getElementById('inspExample').textContent = data.example;
-      document.getElementById('inspTip').textContent = data.tip;
-
-      panel.style.display = 'block';
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    /* Close Inspector */
-    function closeInspector() {
-      const panel = document.getElementById('inspectorPanel');
-      if (panel) panel.style.display = 'none';
-      document.querySelectorAll('.element-card').forEach(c => c.classList.remove('selected'));
-    }
-
-    /* Case Study Tab Switcher */
-    function switchCaseTab(tabKey, btn) {
-      const tabs = document.querySelectorAll('.case-tab-btn');
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      if (btn) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-      }
-
-      const contents = [
-        'case-tab-context',
-        'case-tab-facts',
-        'case-tab-procedural',
-        'case-tab-issue',
-        'case-tab-divergence',
-        'case-tab-evaluation'
-      ];
-      contents.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-
-      const target = document.getElementById(`case-tab-${tabKey}`);
-      if (target) target.style.display = 'block';
-    }
-
-    /* Interactive Audit Checklist Progress */
-    function updateAuditProgress() {
-      let checkedCount = 0;
-      for (let i = 1; i <= 14; i++) {
-        const chk = document.getElementById(`chk${i}`);
-        if (chk && chk.checked) checkedCount++;
-      }
-
-      const percent = Math.round((checkedCount / 14) * 100);
-      const fill = document.getElementById('progressFill');
-      const label = document.getElementById('progressPercent');
-      const badge = document.getElementById('scoreBadge');
-
-      if (fill) fill.style.width = `${percent}%`;
-      if (label) label.textContent = `${percent}% (${checkedCount}/14)`;
-
-      if (badge) {
-        if (percent === 0) {
-          badge.className = 'score-badge badge-init';
-          badge.textContent = 'Бэлтгэл хангагдаагүй байна';
-        } else if (percent < 50) {
-          badge.className = 'score-badge badge-init';
-          badge.textContent = 'Анхан шатны тойм (Оюутны түвшин)';
-        } else if (percent < 85) {
-          badge.className = 'score-badge badge-mid';
-          badge.textContent = 'Дунд шатны дүн шинжилгээ (Хуульчийн түвшин)';
-        } else {
-          badge.className = 'score-badge badge-adv';
-          badge.textContent = 'Бүрэн эрдэм шинжилгээний бүтээл (Шинжээчийн түвшин)';
-        }
-      }
-    }
-
-    /* Outline Generator Presets */
-    const PRESETS = {
-      empty: {
-        title: "",
-        court: "",
-        facts: "",
-        issue: ""
-      },
-      land: {
-        title: "Газрын эрхийн маргаан таслах зөвлөлд хандах журам ба ЗХШХШтХ 54.1.3-ын хууль хэрэглээ",
-        court: "Улсын дээд шүүхийн 2025.05.06-ны 001/ХТ2025/0214 тогтоол, ЗХДЗШШ-ийн 2024.08.06-ны 221/ШТ2024/0624 тогтоол",
-        facts: "Иргэн З нь хүсэлт гаргасан газрыг өөр иргэнд эзэмшүүлсэн дүүргийн Засаг даргын захирамжийг эс зөвшөөрч, Нийслэлийн Газар зохион байгуулалтын албанд хандаж, татгалзсан хариу албан бичгийг гардан авсан.",
-        issue: "ГтХ-ийн 601.3 дахь хэсгийн Нийслэлийн маргаан таслах зөвлөлд хандах заалт нь шүүхэд нэхэмжлэл гаргахын өмнө заавал биелүүлэх үүрэг үү, эсхүл иргэнд сонголт олгосон эрх үү?"
-      },
-      labor: {
-        title: "Үндэслэлгүйгээр ажлаас халагдсаны улмаас ажилгүй байсан хугацааны олговрыг гаргуулахтай холбоотой хэрэг",
-        court: "Улсын дээд шүүхийн 2024 оны 142 дугаар тогтоол, Нийслэлийн Иргэний хэргийн давж заалдах шатны шүүхийн 510 дугаар магадлал",
-        facts: "Ажилтан А-г сахилгын зөрчил гаргасан гэх үндэслэлээр ажил олгогчийн тушаалаар ажлаас чөлөөлсөн боловч сахилгын шийтгэл ногдуулах Хөдөлмөрийн тухай хуулийн журмыг зөрчсөн болох нь тогтоогдсон.",
-        issue: "Ажил олгогч Хөдөлмөрийн хуулийн 101 дүгээр зүйлд заасан урьдчилан сануулах, тайлбар авах ажиллагааг бүрэн хийгээгүй нь тушаалыг шууд хүчингүй болгох үндэслэл болох уу?"
-      }
-    };
-
-    function loadPresetData(key) {
-      const p = PRESETS[key] || PRESETS.empty;
-      document.getElementById('inTitle').value = p.title;
-      document.getElementById('inCourt').value = p.court;
-      document.getElementById('inFacts').value = p.facts;
-      document.getElementById('inIssue').value = p.issue;
-      renderOutlinePreview();
-    }
-
-    function renderOutlinePreview() {
-      const t = document.getElementById('inTitle').value || "[Шүүхийн шийдвэрийн нэрийг агуулгаар оруулна]";
-      const c = document.getElementById('inCourt').value || "[Шийдвэрлэсэн шүүх, огноо, дугаар]";
-      const f = document.getElementById('inFacts').value || "[Гол үйл баримтыг Statsky-ийн шалгуураар товч тодорхой бичнэ]";
-      const i = document.getElementById('inIssue').value || "[Бүрэн хэмжээний эрх зүйн асуулт тавина]";
-
-      const text = `ШҮҮХИЙН ШИЙДВЭРИЙН ДҮН ШИНЖИЛГЭЭНИЙ ТӨЛӨВЛӨГӨӨ\n` +
-        `--------------------------------------------------\n` +
-        `1. ШИНЖИЛГЭЭНИЙ СЭДЭВ / НЭР:\n   ${t}\n\n` +
-        `2. ШИЙДВЭРЛЭСЭН ШҮҮХ & ОГНОО:\n   ${c}\n\n` +
-        `3. ЭХ СУРВАЛЖ:\n   Шүүхийн нэгдсэн цахим сан (shuukh.mn)\n\n` +
-        `4. ГОЛ ҮЙЛ БАРИМТ (MATERIAL FACTS):\n   ${f}\n\n` +
-        `5. ШИЙДВЭРЛЭСЭН БАЙДАЛ (ПРОЦЕСС):\n   Анхан болон Давж заалдах шатны шүүхийн шийдэл, магадлалын үндэслэл\n\n` +
-        `6. ЭРХ ЗҮЙН АСУУДАЛ (LEGAL ISSUE):\n   ${i}\n\n` +
-        `7. ФОРМАЛЬ ШААРДЛАГЫН ҮНЭЛГЭЭ:\n   ЗХШХШтХ-ийн 107-р зүйл, удиртгал, тодорхойлох, үндэслэх, тогтоох хэсэг\n\n` +
-        `8. ПРЕЦЕДЕНТ БА ШҮҮХИЙН ПРАКТИК:\n   Улсын дээд шүүх болон Давж заалдах шатны төсөөтэй шийдвэрүүдийн жишиг\n\n` +
-        `9. ЭРХ ЗҮЙН ОНОЛ, ДОКТРИН:\n   Салбарын эрдэмтдийн үзэл баримтлал, хууль тайлбарлалын зарчим\n\n` +
-        `10. ШИЙДВЭРТ ӨГӨХ ҮНЭЛГЭЭ, АЧ ХОЛБОГДОЛ БА ТУЛГАМДСАН АСУУДАЛ:\n    Шүүмж үнэлгээ, практикт тогтоосон жишиг, хууль тогтоомжийн шинэтгэлийн санал`;
-
-      const box = document.getElementById('outlinePreview');
-      if (box) box.textContent = text;
-    }
-
-    function copyOutlineText() {
-      const box = document.getElementById('outlinePreview');
-      if (!box) return;
-      navigator.clipboard.writeText(box.textContent).then(() => {
-        const fb = document.getElementById('copyFeedback');
-        if (fb) {
-          fb.style.display = 'inline';
-          setTimeout(() => { fb.style.display = 'none'; }, 2500);
-        }
-      });
-    }
-
-    function checkAllForPreset() {
-      for (let i = 1; i <= 14; i++) {
-        const chk = document.getElementById(`chk${i}`);
-        if (chk) chk.checked = true;
-      }
-      updateAuditProgress();
-    }
-
-    // Initialize default state
-    document.addEventListener('DOMContentLoaded', () => {
-      loadPresetData('land');
-      updateAuditProgress();
-    });
-  </script>
 </body>
 </html>
